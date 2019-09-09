@@ -1,0 +1,1 @@
+Pillows installed to view images in Django
