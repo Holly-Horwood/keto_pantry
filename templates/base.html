@@ -29,10 +29,14 @@
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}">Profile</a></li>
+                        <li><a href="{% url 'products' %}">Shop</a></li>
+                        <li><a href="{% url 'get_posts' %}">Blog</a></li>
                         <li><a href="{% url 'logout' %}">Log Out</a></li>
                     {%  else %}
-                        <li><a href="{% url 'register' %}">Register</a></li>
-                        <li><a href="{% url 'login' %}">Log In</a></li>
+                        <li><a href="{% url 'registration' %}">Register</a></li>
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'get_posts' %}">Blog</a></li>
+                        <li><a href="{% url 'products' %}">Shop</a></li>
                     {% endif %}
                     <li>
                         <a href="{% url 'view_cart' %}">

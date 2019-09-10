@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'SECRET_KEY'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -136,6 +136,9 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
 
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 """EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"""
@@ -149,8 +152,8 @@ AUTHENTICATION_BACKENDS = [
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = "email_address" 
-EMAIL_HOST_PASSWORD = "email_pw"
+EMAIL_HOST_USER = "EMAIL_ADDRESS" 
+EMAIL_HOST_PASSWORD = "EMAIL_PW"
 """ EMAIL_USE_SSL = True
 EMAIL_PORT = 465 """
 
