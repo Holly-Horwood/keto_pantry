@@ -7,6 +7,7 @@ from accounts import urls as accounts_urls
 from products import urls as urls_products
 from products.views import all_products
 from cart import urls as urls_cart
+from search import urls as urls_search
 from django.views import static
 from django.views.generic import RedirectView
 from django.views.static import serve
@@ -22,6 +23,7 @@ urlpatterns = [
     url(r'^posts/', include('blog.urls')),
     url(r'^products/', include(urls_products)),
     url(r'^cart/', include(urls_cart)),
+    url(r'^search/', include(urls_search)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT})
 ]  
