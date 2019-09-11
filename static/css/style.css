@@ -19,10 +19,6 @@ footer {
     padding-top: 20px;
 }
 
-.accountform {          TODO:
-    padding-top: 20px;
-}
-
 .badge {
     padding-left: 9px;
     padding-right: 9px;
@@ -63,6 +59,7 @@ caption p {
 .panel-body {
     height: 100%;
     border: 1px solid #ddd;
+    margin-top: 5%;
 }
 
 .product-description {
