@@ -1,6 +1,76 @@
-body {
-    font-family: Arial;
-    padding-top: 100px;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*-----------------COLOURS--------------------*/
+
+.index-title, .index-p {
+    color: #fff;
+}
+
+.index-shop-btn {
+    background-color: #fff;
+    color: #504747;
+}
+
+.nav-item {
+    color: rgb(112, 104, 104);
+}
+
+.navbar-light, .navbar-brand {
+    color: rgb(112, 104, 104);
+}
+
+.nav-item:hover{
+    color: rgb(112, 104, 104);
+}
+
+/*----------------------------------------------*/
+
+.bg-img {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+} 
+
+.container {
+    margin-top: 100px;
+    padding: 0;
+    width: 100%;
+}
+
+.index-banner {
+    position: relative;
+    top: 50%;
+    text-align: center;
+    margin-left: 25%;
+}
+
+.index-title, .index-p, .index-shop-btn {
+    font-weight: 600;
+}
+
+.navbar {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.nav-item {
+    margin-right: 20px;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+}
+
+.navbar-light, .navbar-brand {
+    font-size: 1.7em;
+    font-weight: 400;
+    margin-left: 20px;
 }
 
 footer {
@@ -9,10 +79,6 @@ footer {
     padding-bottom: 20px;
     border-top: 1px solid #ededed;
     color: #A9A9A9;
-}
-
-.icon-bar {
-    background-color: #fff;
 }
 
 .accountform {
@@ -25,11 +91,12 @@ footer {
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
     border-radius: 9px;
+    margin-left: 5px;
 }
 
 .label-warning[href],
 .badge-warning[href] {
-    background-color: #c67605;
+    background-color: #40e940;
 }
 
 .product {

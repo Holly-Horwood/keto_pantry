@@ -28,12 +28,13 @@ def login(request):
 
         if login_form.is_valid():
             user = auth.authenticate(username=request.POST['username'],
-                                    password=request.POST['password'])
-            
+                                    password=request.POST['password'])  
 
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully logged in!")
+               # TODO: ADD GET CART FROM DATABASE IF IT ALREADY EXISTS, REVERSE OF WHAT HAPPENS WHEN YOU ADD SOMETHING TO THE CART FOR THE FIRST TIME.
+               # WHAT DATA STRUCTURE (STRUCTURE IS THE DATA TYPE I.E ARRAY) SESSION CART USES, IS A DICTIONARY CONMTAINING KEY VALUE PAIRS I.E PRODUCT_ID + QTY.
                 return redirect(reverse('index'))
             else:
                 login_form.add_error(None, "Your username or password is incorrect")
