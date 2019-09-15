@@ -7,6 +7,8 @@ from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required #will block users who are not logged in from seeing the logout page
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserLoginForm, UserRegistrationForm
+from cart.models import Cart, CartLineItem
+from products.models import Product
 
 def index(request):
     """Return the index.html file"""
@@ -33,8 +35,19 @@ def login(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully logged in!")
-               # TODO: ADD GET CART FROM DATABASE IF IT ALREADY EXISTS, REVERSE OF WHAT HAPPENS WHEN YOU ADD SOMETHING TO THE CART FOR THE FIRST TIME.
-               # WHAT DATA STRUCTURE (STRUCTURE IS THE DATA TYPE I.E ARRAY) SESSION CART USES, IS A DICTIONARY CONMTAINING KEY VALUE PAIRS I.E PRODUCT_ID + QTY.
+
+                cart_get = Cart.objects.get(                        #gets cart attached to user once logged in
+                    user = User(id=user.id)
+                )
+                cart_items_get = CartLineItem.objects.filter(       #gets line items for this cart
+                    cart = cart_get
+                )
+                cart_dict = {}                                      #creates an empty dictionary
+                for item in cart_items_get:                         
+                    cart_dict[item.product.id] = item.quantity         #itirates through items from previous session cart and adds them back in
+
+                request.session['cart'] = cart_dict
+                
                 return redirect(reverse('index'))
             else:
                 login_form.add_error(None, "Your username or password is incorrect")
