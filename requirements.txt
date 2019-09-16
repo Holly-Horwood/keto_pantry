@@ -12,6 +12,7 @@ django-storages==1.7.2
 docutils==0.15.2
 enum34==1.1.6
 futures==3.3.0
+gunicorn==19.9.0
 idna==2.8
 ipaddress==1.0.22
 jmespath==0.9.4
