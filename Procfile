@@ -1,1 +1,1 @@
-web: gunicorn keto-pantry.wsgi:application
+web: gunicorn keto_pantry.wsgi:application
