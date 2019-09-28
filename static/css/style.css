@@ -5,40 +5,42 @@
 
 /*-----------------COLOURS--------------------*/
 
-.index-title, .index-p {
-    color: #fff;
-}
-
-.index-shop-btn {
-    background-color: #fff;
-    color: #504747;
-}
-
 .nav-item {
-    color: rgb(112, 104, 104);
+    color: #61BF3F;
 }
 
 .navbar-light, .navbar-brand {
+    color: #61BF3F;
+}
+
+.nav-item:hover {
     color: rgb(112, 104, 104);
 }
 
-.nav-item:hover{
-    color: rgb(112, 104, 104);
+.post-title {
+    color: #61BF3F;
 }
 
 /*----------------------------------------------GENERAL*/
 
 .base-container {
     margin-top: 100px;
+    font-family: 'Tahoma', sans-serif;
+}
+
+.alert-success {
+    margin-top: 100px;
+
 }
 
 /*----------------------------------------------NAVBAR*/
 
 .nav-item {
     font-family: 'Kaushan Script', cursive;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 10px;
     margin-right: 10px;
+    text-decoration: none;
 }
 
 .navbar-brand {
@@ -51,7 +53,7 @@
 /*----------------------------------------------INDEX*/
 
 .bg-img {
-    background-image: url(/static/media/images/avo-eye.jpg); 
+    background-image: url("{{ STATIC_IMG_URL }}avo-eye.jpg"); 
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -64,6 +66,18 @@
 /*--------------------------------------------REGISTER*/
 
 
+/*------------------------------------------------BLOG*/
+
+.blogpost-row, .blogmedia-row {
+    width: 95%;
+}
+
+.post-title {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
 /*---------------------------------------------FOOTER*/
 
 footer {
@@ -75,3 +89,24 @@ footer {
     z-index: 2;
 }
 
+
+/*-------------------MEDIA----------------------------*/
+
+/*-------------------TABLET---------------------------*/
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    
+}
+
+/*------------------DESK TOP--------------------------*/
+
+/*Large devices (desktops, 992px and up)*/
+
+@media (min-width: 992px) { 
+
+    .blogpost-row, .blogmedia-row {
+        width: 80%;
+    }
+
+ }
