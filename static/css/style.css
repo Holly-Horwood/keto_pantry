@@ -64,7 +64,7 @@
 }
 
 .navbar-light, a.navbar-brand {
-    font-family: 'Tahoma', cursive;
+    font-family: 'Kaushan Script', Tahoma, cursive;
     font-size: 2em;
     padding: 10px;
 }
@@ -104,8 +104,11 @@
 
 /*------------------------------------------------BLOG*/
 
-.blogpost-row, .blogmedia-row {
-    width: 95%;
+.blog-deck {
+    width: 80%;
+    margin: auto;
+    padding: 2%;
+    box-shadow: 10px 10px 5px 0px rgba(219,204,219,1);
 }
 
 .post-title {
