@@ -10,15 +10,24 @@
 }
 
 .nav-item:hover {
-    color: #d8c3c3;
+    color: #a79d9d;
 }
 
 .navbar-light, .navbar-brand {
     color: #706868;
 }
 
-.navbar-light, .navbar-brand:hover {
-    color: #d8c3c3;
+.navbar-light, a.navbar-brand:hover {
+    color: #a79d9d;
+}
+
+.banner {
+    color: #fff;
+}
+
+.btn .btn-light {
+    color: #adb5bd;
+    background-color: #fff
 }
 
 .post-title {
@@ -54,7 +63,7 @@
     text-decoration: none;
 }
 
-.navbar-light, .navbar-brand {
+.navbar-light, a.navbar-brand {
     font-family: 'Tahoma', cursive;
     font-size: 2em;
     padding: 10px;
@@ -70,12 +79,27 @@
     height: 80vh;
 } 
 
+.banner {
+    margin-right: 5%;
+    margin-top: 2%;
+    padding-top: 22%;
+    text-align: center;
+    margin-left: 60%;
+}
+
+.btn .btn-light {
+    font-size: 2em;
+}
+
 
 
 
 
 
 /*--------------------------------------------REGISTER*/
+
+
+
 
 
 /*------------------------------------------------BLOG*/
@@ -111,6 +135,8 @@ footer {
     bottom: 0;
     position: fixed;
     z-index: 2;
+    font-size: 1.2em;
+
 }
 
 
