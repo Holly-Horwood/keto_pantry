@@ -36,9 +36,14 @@ def login(request):
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully logged in!")
 
-                cart_get = Cart.get(                        #gets cart attached to user once logged in
-                    user = user
-                )
+            try:
+                cart = Cart.objects.get(    # Gets an existing cart
+                    user=user)
+
+            except Cart.DoesNotExist:
+                cart = Cart(user=user)                               
+                cart.save()             # Create a new Cart
+    
                 cart_items_get = CartLineItem.objects.filter(       #gets line items for this cart
                     cart = cart_get
                 )
