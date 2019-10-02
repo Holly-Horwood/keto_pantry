@@ -37,7 +37,7 @@ def login(request):
                 messages.success(request, "You have successfully logged in!")
 
             try:
-                cart = Cart.objects.get(    # Gets an existing cart
+                cart_get = Cart.objects.get(    # Gets an existing cart
                     user=user)
 
             except Cart.DoesNotExist:
