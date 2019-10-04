@@ -5,7 +5,11 @@
 
 /*-----------------COLOURS--------------------*/
 
-.nav-item {
+nav {
+    background-color: #fff;
+}
+
+.nav-item, .navbar-toggler {
     color: #706868;
 }
 
@@ -14,7 +18,7 @@
 }
 
 .navbar-light, .navbar-brand {
-    color: #706868;
+    color: #28a745;
 }
 
 .navbar-light, a.navbar-brand:hover {
@@ -30,8 +34,20 @@
     background-color: #fff
 }
 
+.blog-card {
+    background-color: #edefe9b5;
+}
+
 .post-title {
     color: #706868;
+}
+
+.product-deck {
+    background-color: #edefe9b5;
+}
+
+.footer {
+    background-color: #fff;
 }
 
 /*----------------------------------------------GENERAL*/
@@ -45,7 +61,7 @@
     margin-top: 100px;
 }
 
-.body {
+body {
     font-family: 'Tahoma', sans-serif;
     font-size: 100%;
     color: #706868;
@@ -66,7 +82,7 @@
 
 .navbar-light, a.navbar-brand {
     font-family: 'Kaushan Script', Tahoma, cursive;
-    font-size: 2em;
+    font-size: 3em;
     padding: 10px;
 }
 
@@ -82,15 +98,18 @@
 
 .banner {
     margin-right: 5%;
-    margin-top: 2%;
+    margin-top: 130%;
     padding-top: 22%;
     text-align: center;
-    margin-left: 60%;
+}
+
+.banner-title {
     font-size: 1.5em;
 }
 
 .btn .btn-light {
     font-size: 2em;
+    margin-bottom: 30px;
 }
 
 
@@ -106,10 +125,16 @@
 
 /*------------------------------------------------BLOG*/
 
-.blog-deck {
+.blog-card:first-of-type {
+    margin-top: 200px;
+}
+
+.blog-card {
     width: 80%;
-    margin: auto;
     padding: 2%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 3%;
     box-shadow: 10px 10px 5px 0px rgba(219,204,219,1);
 }
 
@@ -119,16 +144,38 @@
     padding: 10px;
 }
 
+.img-circle {
+    border-radius: 60%;
+    height: 20vh;
+}
+
 /*------------------------------------------------PRODUCTS*/
+
+.product-row {
+    width: 80%;
+    margin-top: 15vh;
+}
+
+.product-row:last-of-type {
+    margin-bottom: 10vh;
+}
+
+.product-deck {
+    margin-bottom: 5%;
+}
 
 .product-body {
     padding: 2%;
     box-shadow: 10px 10px 5px 0px rgba(219,204,219,1);
-
 }
 
-.input-product-group {
-    width: 20%;
+.product-img {
+    max-width:100%;
+    max-height:100%;
+}
+
+.product-qty {
+    width: 30%;
 }
 
 /*---------------------------------------------FOOTER*/
@@ -151,6 +198,21 @@ footer {
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
+
+    body {
+        font-size: 150%;
+    }
+    
+    nav {
+        background-color: transparent;
+    }
+
+    .banner {
+        margin-top: 2%;
+        margin-left: 60%;
+    }
+
+    
     
 }
 
@@ -160,6 +222,10 @@ footer {
 
 @media (min-width: 992px) { 
 
+    body {
+        font-size: 150%;
+    }
+    
     .blogpost-row, .blogmedia-row {
         width: 80%;
     }
