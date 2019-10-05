@@ -139,7 +139,7 @@ https://rating-widget.com/
 ### **Other resources:**
 
 **Stack Overflow**
-- Image preview and file size check for add and edit pages. Code was altered but the original code was courtesy of nkon https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
+- 
 
 **YouTube**
 - Navbar colour change on scroll - Code courtesy of System 22 I.T. Solutions https://www.youtube.com/watch?v=AM-GT_0Uu5w
@@ -338,9 +338,8 @@ All content written by Holly Horwood.
 -   Most images were supplied by Pixabay and Flickr
 - All other images supplied by Holly Horwood
 - Favicon was generated using favicon.io
--   File size uploaded image checker and file preview Javascript Code, Original code courtesy of nkon https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
--   Star ratings widget courtesy of https://rating-widget.com/
--   Google fonts: Kaushan Script
+-   You Tube. JS to change nav colour on scroll - Code courtesy of System 22 I.T. Solutions https://www.youtube.com/watch?v=AM-GT_0Uu5w
+-   Google fonts: Roboto and Montserrat
 
 **Acknowledgements:**
 
