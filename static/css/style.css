@@ -125,29 +125,42 @@ body {
 
 /*------------------------------------------------BLOG*/
 
-.blog-card:first-of-type {
-    margin-top: 200px;
+.blog-deck:first-of-type {
+    margin-top: 7vh;
+}
+
+.blog-card:last-of-type {
+    margin-bottom: 10vh;
 }
 
 .blog-card {
     font-family: 'Roboto', sans-serif;
-    width: 80%;
     padding: 2%;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 3%;
+    width: 80%;
     box-shadow: 10px 10px 5px 0px rgba(219,204,219,1);
 }
 
 .post-title {
-    font-family: 'Tahoma', cursive;
+    font-family: 'Roboto', cursive;
     font-size: 1.5em;
     padding: 10px;
+    padding-left: 0;
 }
 
 .img-circle {
     border-radius: 60%;
     height: 20vh;
+}
+
+.author {
+    margin-top: 2%;
+}
+
+.blog-story {
+    margin-bottom: 0;
 }
 
 /*------------------------------------------------PRODUCTS*/
@@ -228,7 +241,7 @@ footer {
         font-size: 150%;
     }
     
-    .blogpost-row, .blogmedia-row {
+    .blogpost-row {
         width: 80%;
     }
 

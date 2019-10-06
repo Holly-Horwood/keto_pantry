@@ -5,9 +5,9 @@
 {% block page_heading %}Home{% endblock %}
 
 {% block content %}
-<body class="bg-img" style="background-image: url({% static 'media/images/avo-eye.jpg' %});"></body>
+<body class="bg-img" style="background-image: url({% static 'media/images/avo-eye.jpg' %})"></body>
 <div class="banner">
     <h1 class="banner-title">Good Health Starts From The Inside</h1>
-    <button class="shop-button btn-light btn btn-lg">START SHOPPING!</button>
+    <a href="/products/" class="shop-button btn-light btn btn-lg" tabindex="0">Start shopping</a>
 </div>
 {% endblock %}

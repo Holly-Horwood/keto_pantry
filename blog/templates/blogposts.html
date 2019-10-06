@@ -2,23 +2,21 @@
 {% block content %}
 {% for post in posts %}
 <div class="card-deck blog-deck"></div>
-    <div class="blog-card">
-        <div class="row blogmedia-row h-100 mx-auto flex-fill">
-            <div class="col-md-2 col-sm-3">
+    <div class="blog-card h-100 mx-auto">
+        <div class="row blogmedia-row">
+            <div class="col-md-3 col-sm-4 text-center">
                 <a class="story-img" href="#">
                     <img src="{{ MEDIA_URL }}{{ post.image }}" class="img-circle">
                 </a>
-                <p><span class="boldtext text-center">Author:</span> Holly</p>
+                <p class="blog-story author"><span class="boldtext">Author:</span> Holly Horwood</p>
+                <p class="blog-story"><span class="boldtext">Views:</span> {{post.views}}</p>
+                <p class="blog-story"><span class="boldtext">Published:</span> {{ post.published_date }} </p>
             </div>
-            <div class="col-md-10 col-sm-9">
-                <h3 class="post-title">{{ post.title }}</h3>
-                <div class="row blogpost-row h-100 mx-auto">
+            <div class="col-md-9 col-sm-8 d-flex align-items-center"> 
+                <div class="row blogpost-row mx-auto">
+                    <h3 class="post-title"><strong>{{ post.title }}</strong></h3>
                     <div class="col-xs-9">
-                        <p>{{ post.content|truncatewords:100 }}</p>
-                        <p><a href="{% url 'post_detail' post.id %}" class="btn btn-default">Read more</a></p>
-                        <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
-                        <p><span class="boldtext">Views:</span> {{post.views}}</p>
-                        <p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
+                        <p>{{ post.content }}</p>
                     </div>
                 </div>
             </div>
