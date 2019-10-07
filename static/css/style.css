@@ -17,11 +17,11 @@ body {
     color: #a79d9d;
 }
 
-.navbar-brand {
+.navbar-light, .navbar-brand {
     color: #706868;
 }
 
-a.navbar-brand:hover {
+.navbar-light, a.navbar-brand:hover {
     color: #a79d9d;
 }
 
