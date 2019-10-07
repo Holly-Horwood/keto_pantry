@@ -17,11 +17,11 @@ body {
     color: #a79d9d;
 }
 
-.navbar-light, .navbar-brand {
+.navbar-light .navbar-brand  {
     color: #706868;
 }
 
-.navbar-light, a.navbar-brand:hover {
+.navbar-light a.navbar-brand:hover {
     color: #a79d9d;
 }
 
@@ -183,7 +183,7 @@ a.navbar-brand {
 }
 
 .product-body {
-    padding: 2%;
+    padding: 5%;
     box-shadow: 10px 10px 5px 0px rgba(219,204,219,1);
 }
 
@@ -211,6 +211,15 @@ a.navbar-brand {
 .cart-row {
     margin-top: 10vh;
 }
+
+.amend-btn {
+    margin-left: 2%
+}
+
+.cart-img, .cart-img-title {
+    display: none;
+}
+
 
 
 /*--------------------------------------------CHECKOUT*/
@@ -256,6 +265,10 @@ footer {
     .banner {
         margin-top: 2%;
         margin-left: 58%;
+    }
+
+    .cart-img, .cart-img-title {
+        display: block;
     }
 
     
