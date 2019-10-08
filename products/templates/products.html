@@ -4,10 +4,10 @@
 {% block content %}
 <div class="row row-flex product-row mx-auto">
     {% for product in products %}
-    <div class="col-sm-4 col-md-3 col-lg-2 h-100 panel-default">
-        <div class="card-deck product-deck">
-            <div class="card product-card h-100">
-                <div class="product-body">
+    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 panel-default">
+        <div class="card-deck product-deck h-100">
+            <div class="card product-card">
+                <div class="product-body h-100">
                     <div class="img-thumbnail">
                         <img src="{{ MEDIA_URL }}{{ product.image }}" alt="photo of product" class="product-img">
                     </div>

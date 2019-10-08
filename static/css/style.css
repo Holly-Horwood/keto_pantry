@@ -46,6 +46,11 @@ body {
     color: #706868;
 }
 
+.product-body:hover {
+    background-color: #969e98d9;
+    color: #fff;
+}
+
 footer {
     background-color: #fff;
 }
@@ -101,6 +106,10 @@ a.navbar-brand {
 
 .banner-title {
     font-size: 3em;
+}
+
+.banner + footer {
+    background-color: transparent;
 }
 
 .btn .btn-light {
@@ -176,10 +185,6 @@ a.navbar-brand {
 
 .product-row:last-of-type {
     margin-bottom: 10vh;
-}
-
-.product-deck {
-    margin-bottom: 5%;
 }
 
 .product-body {
