@@ -81,7 +81,7 @@ body {
 
 a.navbar-brand {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3em;
+    font-size: 2em;
     padding-top: 0;
     margin-left: 20px;
 }
@@ -124,6 +124,13 @@ a.navbar-brand {
 
 /*--------------------------------------------REGISTER*/
 
+.reg-container {
+    margin-top: 15vh;
+}
+
+.reg-form, .p {
+    display: inline-grid;
+}
 
 /*----------------------------------------------LOGIN*/
 
@@ -261,6 +268,10 @@ footer {
     
     .navbar {
         background-color: transparent;
+    }
+
+    a.navbar-brand {
+        font-size: 3em;
     }
 
     .navbar-light.scroll {

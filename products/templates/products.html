@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load bootstrap_tags %}
+{% load static from staticfiles %}
+
 
 {% block content %}
 <div class="row row-flex product-row mx-auto">
@@ -31,5 +33,5 @@
         </div>
     </div>
     {% endfor %}
-</div>}
+</div>
 {% endblock %}
