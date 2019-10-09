@@ -5,11 +5,11 @@
 
 {% block content %}
 <div class="container login-container">
-    <h3>Login</h3>
+    <h2 class="login-title">Login</h2>
     <form method="POST">
         {% csrf_token %}
-        {{ login_form }}
-        <button type="submit">Login</button>
+        {{ login_form|as_bootstrap }}
+        <button class="login-btn" type="submit">Login</button>
     </form>
     
     <p><a href="{% url 'password_reset' %}">Reset Password</a></p>

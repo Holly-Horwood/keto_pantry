@@ -117,25 +117,36 @@ a.navbar-brand {
     margin-bottom: 30px;
 }
 
-
-
-
-
-
 /*--------------------------------------------REGISTER*/
 
 .reg-container {
     margin-top: 15vh;
+} 
+
+.reg-title {
+    font-family: 'Montserrat', sans-serif;
 }
 
-.reg-form, .p {
-    display: inline-grid;
+.reg-btn {
+    padding: 3px;
+}
+
+.bg-sign-img {
+    opacity: 0.1;
 }
 
 /*----------------------------------------------LOGIN*/
 
 .login-container {
-    margin-top: 10vh;
+    margin-top: 15vh;
+}
+
+.login-title {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login-btn {
+    padding: 3px;
 }
 
 

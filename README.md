@@ -340,6 +340,7 @@ All content written by Holly Horwood.
 - Favicon was generated using favicon.io
 -   You Tube. JS to change nav colour on scroll - Code courtesy of System 22 I.T. Solutions https://www.youtube.com/watch?v=AM-GT_0Uu5w
 -   Google fonts: Roboto and Montserrat
+-   Registration and login background photo by Kelly Sikkema on Unsplash
 
 **Acknowledgements:**
 
