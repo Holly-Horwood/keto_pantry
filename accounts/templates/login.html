@@ -4,16 +4,21 @@
 
 
 {% block content %}
-<div class="container login-container">
+<div class="login-container">
+    <body class="bg-sign-img" style="background-image: url({% static 'media/images/tape_measure.jpg' %})"></body>
+    
     <h2 class="login-title">Login</h2>
     <form method="POST">
         {% csrf_token %}
         {{ login_form|as_bootstrap }}
         <button class="login-btn" type="submit">Login</button>
+        <p class="reset"><a class="reset-link" href="{% url 'password_reset' %}">Reset Password</a></p>
     </form>
-    
-    <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
 </div>
-
+<footer>
+    <div class="container-fluid">
+        <p>Copyright &copy; Holly Horwood</p>
+    </div>
+</footer>
 
 {% endblock %}

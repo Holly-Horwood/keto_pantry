@@ -3,7 +3,7 @@
 {% load static from staticfiles %}
 
 {% block content %}
-<div class="container reg-container">
+<div class="reg-container">
     <body class="bg-sign-img" style="background-image: url({% static 'media/images/tape_measure.jpg' %})"></body>
     <h2 class="reg-title"> Register </h2>
     <p>If you already have an account, you can <a href="{% url 'login' %}">sign in </a></p>
@@ -12,6 +12,11 @@
         <button class="reg-btn" type="submit">Register</button>
     </form>
 </div>
+<footer>
+    <div class="container-fluid">
+        <p>Copyright &copy; Holly Horwood</p>
+    </div>
+</footer>
 
 
 {% endblock %}
