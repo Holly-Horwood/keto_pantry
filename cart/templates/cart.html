@@ -6,26 +6,26 @@
 {% block content %}
 
 <div class="container cart-container">
-    <div class="my-5">
+    <div class="cart-title mt-3">
         <h2>Your Cart</h2>
     </div>
     <table class="table table-hover">
         <thead>
             <tr>
-                <th scope="col" class="cart-img-title">Image</th>
-                <th scope="col">Product Name</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Price</th>
-                <th scope="col">Remove</th>
+                <th scope="col" class="cart-media-title text-center">Image</th>
+                <th scope="col" class="text-center">Product Name</th>
+                <th scope="col" class="text-center">Quantity</th>
+                <th scope="col" class="text-center">Price</th>
+                <th scope="col" class="text-center">Remove</th>
             </tr>
         </thead>
         <tbody>
             {% for item in cart_items %}
             <tr>
-                <td class="cart-img"><img src="{{ MEDIA_URL }}{{ product.image }}" alt="photo of product"></td>
-                <td>{{ item.product.name }}</td>
+                <td class="cart-media text-center"><img class="img-thumbnail cart-img text-center" src="{{ MEDIA_URL }}{{ item.product.image }}" alt="photo of product"></td>
+                <td class="text-center">{{ item.product.name }}</td>
                 <td>
-                    <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
+                    <form class="form-inline justify-content-center" method="post" action="{% url 'adjust_cart' item.id %}">
                         {% csrf_token %}
                         <div class="form-group">
                             <label for="exampleInputAmount" class="sr-only">New Qty</label>
@@ -38,22 +38,22 @@
         aria-hidden="true"></span>Amend</button>
 </form>
 </td>
-<td>${{ item.product.price }}</td>
-<td><i class="fas fa-trash-alt"></i></td>
+<td class="text-center">${{ item.product.price }}</td>
+<td class="text-center bin"><i class="fas fa-trash-alt fa-2x"></i></td>
 </tr>
 
 
 {% endfor %}
 <tr>
     <th scope="row"></th>
-    <td colspan="2">Total</td>
-    <td>$10000</td>
+    <td colspan="2" class="text-right"><strong>Total</strong></td>
+    <td class="text-center"><strong>${{ total }}</strong></td>
 </tr>
 <tr>
     <th scope="row"></th>
     <td colspan="3" class="text-right ">
-        <form class="checkout" action="{% url 'checkout' %}">
-            <button class="btn btn-success mr-4"> Proceed To Checkout</button>
+        <form class="proceed d-flex justify-content-end" action="{% url 'checkout' %}">
+            <button class="btn btn-success"> Proceed To Checkout</button>
         </form>
     </td>
 </tr>
