@@ -15,7 +15,7 @@
     <!--FAVICON-->
     <link rel="shortcut icon" type="image/png" href="{% static 'media/images/favicon.png' %}" />
     <!--CSS STYLESHEET-->
-    <link rel="stylesheet" href="{% 'static' css/style.css %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!--BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
@@ -38,7 +38,6 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     {% if user.is_authenticated %}
-                    <li><a class="nav-item" href="{% url 'profile' %}">Profile</a></li>
                     <li><a class="nav-item" href="{% url 'logout' %}">Log Out</a></li>
                     <!--options once logged in-->
                     {%  else %}

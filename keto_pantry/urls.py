@@ -2,7 +2,7 @@
 
 from django.conf.urls import url, include
 from django.contrib import admin
-from accounts.views import index, logout, login, registration, user_profile
+from accounts.views import index, logout, login, registration
 from accounts import urls as accounts_urls
 from accounts import url_reset
 from products import urls as urls_products

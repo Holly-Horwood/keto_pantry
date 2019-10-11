@@ -6,7 +6,6 @@
 {% block content %}
 <div class="login-container">
     <body class="bg-sign-img" style="background-image: url({% static 'media/images/tape_measure.jpg' %})"></body>
-    
     <h2 class="login-title">Login</h2>
     <form method="POST">
         {% csrf_token %}
@@ -20,5 +19,4 @@
         <p>Copyright &copy; Holly Horwood</p>
     </div>
 </footer>
-
 {% endblock %}
