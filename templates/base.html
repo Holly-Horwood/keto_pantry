@@ -53,7 +53,7 @@
                         <a class="nav-item" href="{% url 'view_cart' %}">
                             <i class="fa fa-shipping-cart"></i>Cart
                             {% if product_count > 0 %}
-                            <label class="badge badge-success">{{ product_count }}</label>
+                            <label class="badge badge-success"><i class="fas fa-shopping-cart"></i> {{ product_count }}</label>
                             {% endif %}
                         </a>
                     </li>
