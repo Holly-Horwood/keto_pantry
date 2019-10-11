@@ -140,10 +140,21 @@ a.navbar-brand {
     background-color: transparent;
 }
 
+/*--------------------------------------PASSWORD RESET*/
+
+.reset-form {
+    margin-top: 20vh;
+    margin-left: 2%;
+}
+
+.reset-btn {
+    margin-top: 5%;
+}
+
 /*----------------------------------------------LOGIN*/
 
 .login-container {
-    margin-top: 15vh;
+    margin-top: 20vh;
 }
 
 .login-title {
@@ -372,9 +383,9 @@ footer {
     }
 
     .reg-container, .login-container {
-        width: 40%;
+        width: 30%;
         float: left;
-        margin-left: 150px;
+        margin-left: 300px;
     }
 
     .login-container {
