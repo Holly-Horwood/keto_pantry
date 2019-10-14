@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required #will block users who are not logged in from seeing the logout page
 from django.contrib.auth.models import User
+from django.forms import model_to_dict
 from accounts.forms import UserLoginForm, UserLoginForm, UserRegistrationForm
 from cart.models import Cart, CartLineItem
 from products.models import Product
@@ -27,30 +28,32 @@ def login(request):
         return redirect(reverse('index'))
     if request.method == "POST":
         login_form = UserLoginForm(request.POST)
-
         if login_form.is_valid():
             user = auth.authenticate(username=request.POST['username'],
                                     password=request.POST['password'])  
-            # Check if user has a cart, create it if necessary
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully logged in!")
-
+                # Check if user has a cart, create it if necessary
                 try:
-                    cart_get = Cart.objects.get(user=user)    #gets an existing cart
+                    cart_get = Cart.objects.get(    # Gets an existing cart
+                        user=user)
+                    request.session['cart'] = model_to_dict(cart_get)    
                     # debug info
                     # shows how to iterate over cart line items
                     print('no of items in cart: {}'.format(cart_get.cartlineitem_set.all().count()))
-                    for CartLineItem in cart_get.cartlineitem_set.all():
-                        print('Product: {}'.format(CartLineItem.product.description))    
-
+                    for cartLineItem in cart_get.cartlineitem_set.all():
+                        print('Product: {}'.format(cartLineItem.product.description))
+                
                 except Cart.DoesNotExist:
-                    cart = Cart(user=user)                               
+                    cart = Cart(user=user)
                     cart.save()             # Create a new Cart
-                    
-                    return redirect(reverse('index'))
+                
+                return redirect(reverse('index'))
+            
             else:
                 login_form.add_error(None, "Your username or password is incorrect")
+    
     else:
         login_form = UserLoginForm()
     return render(request, 'login.html', {'login_form': login_form})

@@ -275,9 +275,8 @@ a.navbar-brand {
     display: none;
 }
 
-.cart-image {
-    max-width: 100px;
-    max-height: 100px
+.cart-img {
+    width: 100px;
 }
 
 .cart-title {
