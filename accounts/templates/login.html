@@ -7,7 +7,7 @@
 <div class="login-container">
     <body class="bg-sign-img" style="background-image: url({% static 'media/images/tape_measure.jpg' %})"></body>
     <h2 class="login-title">Login</h2>
-    <form method="POST">
+    <form class="login-form" method="POST">
         {% csrf_token %}
         {{ login_form|as_bootstrap }}
         <button class="login-btn" type="submit">Login</button>

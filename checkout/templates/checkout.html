@@ -43,16 +43,15 @@
         </div>
     </div>
     {% endfor %}
-</div>
+
 <!--CHECKOUT TOTAL-->
-<div class="row checkout-total-row">
-        <div class="text-center checkout-total col-lg-6 col-sm-12">
-            <p class="total"><strong>Total: &nbsp; ${{ total }}</strong></p>
-        </div>
+    <div class="text-center checkout-total col-lg-6 col-sm-12">
+        <p class="total"><strong>Total: &nbsp; ${{ total }}</strong></p>
+    </div>
 </div>        
 
 <!--CHECKOUT FORM-->
-<form class="payment-form" role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+<form class="payment-form" role="form" method="POST" id="payment-form" action="{% url 'checkout' %}">
     <legend>Payment Details</legend>
 
     <div id="credit-card-errors" style="display: none;">

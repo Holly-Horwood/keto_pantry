@@ -18,12 +18,16 @@ body {
     color: #a79d9d;
 }
 
-.navbar-light .navbar-brand, .cart-title   {
+.navbar-light a.navbar-brand, .cart-title   {
     color: #706868;
 }
 
 .navbar-light a.navbar-brand:hover {
     color: #a79d9d;
+}
+
+.fa-shopping-cart {
+    background-color: #28a745
 }
 
 .banner {
@@ -345,7 +349,7 @@ footer {
     }
 
     a.navbar-brand {
-        font-size: 3em;
+        font-size: 2.5em;
     }
 
     .navbar-light.scroll {
@@ -367,12 +371,16 @@ footer {
 
 /*------------------DESK TOP--------------------------*/
 
-/*Large devices (desktops, 992px and up)*/
+/*Large devices (desktops, 999px and up)*/
 
-@media (min-width: 992px) { 
+@media (min-width: 999px) { 
 
     body {
         font-size: 150%;
+    }
+
+    a.navbar-brand {
+        font-size: 3em;
     }
     
     .blogpost-row {

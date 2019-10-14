@@ -31,29 +31,24 @@ def login(request):
         if login_form.is_valid():
             user = auth.authenticate(username=request.POST['username'],
                                     password=request.POST['password'])  
-
+            # Check if user has a cart, create it if necessary
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully logged in!")
 
-            try:
-                cart_get = Cart.objects.get(    # Gets an existing cart
-                    user=user)
+                try:
+                    cart_get = Cart.objects.get(user=user)    #gets an existing cart
+                    # debug info
+                    # shows how to iterate over cart line items
+                    print('no of items in cart: {}'.format(cart_get.cartlineitem_set.all().count()))
+                    for CartLineItem in cart_get.cartlineitem_set.all():
+                        print('Product: {}'.format(CartLineItem.product.description))    
 
-            except Cart.DoesNotExist:
-                cart = Cart(user=user)                               
-                cart.save()             # Create a new Cart
-    
-                cart_items_get = CartLineItem.objects.filter(       #gets line items for this cart
-                    cart = cart_get
-                )
-                cart_dict = {}                                      #creates an empty dictionary
-                for item in cart_items_get:                         
-                    cart_dict[item.product.id] = item.quantity         #itirates through items from previous session cart and adds them back in
-
-                request.session['cart'] = cart_dict
-                
-                return redirect(reverse('index'))
+                except Cart.DoesNotExist:
+                    cart = Cart(user=user)                               
+                    cart.save()             # Create a new Cart
+                    
+                    return redirect(reverse('index'))
             else:
                 login_form.add_error(None, "Your username or password is incorrect")
     else:
