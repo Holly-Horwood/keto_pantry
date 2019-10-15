@@ -21,7 +21,7 @@ This is my fourth milestone project for the Full Stack Software Development cour
 
 **Research:**
 
- Keto and Low Carb are very similar, the main difference is the amount of carbs allowed daily, those eating Low Carb (Low Carbohydrate) will consume usually between 50gm to 100gm of carbs per day whereas a Keto (Ketogenic) diet is stricter limiting the daily intake to less than 50gm per day to maintain a state of ketosis in the body. 
+ Keto and Low Carb are very similar, the main difference is the amount of carbs allowed daily, those eating Low Carb (Low Carbohydrate) will consume usually between 50gm to 100gm of carbs per day whereas a Keto (Ketogenic) diet is stricter, limiting the daily intake to less than 50gm per day to maintain a state of ketosis in the body. 
  
  I consider myself quite knowledgeable in this area as I have lived the low carb lifestyle for many years now. I also created my own low carb Facebook page for diabetics in New Zealand that at the time of writing this has over 1600 members and continues to grow almost daily.  Via my Facebook page I am able to discuss, learn, teach and share ideas, the page was a great inspiration for this project. I intend to eventually extend on this site to include restaurant recommendation for people looking for places to eat the offer low carb friendly options.  My Facebook page alone has already changed so many lives for the better and I see this project as the start of another venture that will continue to help make diabetics lives easier and improve their health along the way.
 
@@ -35,31 +35,37 @@ This is my fourth milestone project for the Full Stack Software Development cour
 
 **Home Page**
 
-The home page shows a navbar at the top of the screen with links to all pages plus a keyword search bar.  The entire container is taken up by a background image and a banner has been added with a 'shop' button to encourage users to click and go straight to the shopping/products page.  Footer????....................
+The home/index page shows a navbar at the top of the screen with links to all pages plus a keyword search bar, on the far left is the websites name "Keto Pantry".  The navbar contains the following items when intially visited:
+-    Register
+-   Login
+-   Blog
+-   Shop
+-   Cart
 
-**Products Page**
+As the site is used and items are added to the cart a fontawesome cart icon will show next to cart and display the number of items currently in the cart.
+The entire container is taken up by a background image and a banner has been added with a 'start shopping' button to encourage users to click and go straight to the shop/products page.  A simple footer is at the bottom of each page with copyright info.
 
-On a smaller device like a mobile phone all products will display vertically one by one and on larger devices they will show as a Bootstrap card-deck side by side 3 across at a time.  A search box has been placed at the top of the screen so it is easy for the user to find what they are looking for quickly.  A navigation bar offers a way to add, login or return to the recipes page easily.  The logo can be clicked for quick access to the home page and each recipe contains a clickable image and a full recipe button that will both take the user to the full screen recipe. 
+**Authentication Pages**
 
-Each recipe includes some basic information like an overview blurb about the recipe, image, cooking time, calories, carbs, ratings etc to help the user decide which recipe they would like to make. 
+When visiting the site initially the navbar on the home screen shows two authentcation options _Register_ and _Login_.  Users can opt to go to the registration page where they can fill out their user, contact information and create a password.  User that are already registered can simply click on the _Login_ menu option and enter their crudentials to login.  Once a user is logged in the menu will change now only showing the option to _Log Out_.  If the logged in users is an _administrator_ of the site they will also have an _Admin_ option on the navbar to access the backend so that they are able to update the website.  Any time a user logs in or out a message will appear on the screen to confirm the action.
 
-**Full Recipe Page**
+**Blog Page**
 
-The full recipe page goes into detail more.  It shows a larger image with the customer rating review widget below and a short blurb about the recipe.  To the right a breakdown can been seen of important information like the author, cook time, prep time and some key nutritional information relevant to those on a Low Carb diet. 
+The blog page offers a simple list of responsive posts.  Each post has an image, authors name, views, and published date.  If a post includes a link this can be clicked on and the user is redirected to a separate page to view more information, HTML target="_blank" is used here so that the Keto Pantry page is still open so the user can easily return to it.
 
-**Recipe Search Results Page**
+**Shop Page**
 
-Once the customer has select all required search results (they can select multiple checkboxes or leave blank) they will be redirected to the display results page.  Here they can view any recipes that match the criteria they have set when selecting search options.  The options they ticked or clicked on in the search area remain visible on the screen in the search container so the user can easily see what they had chosen to look up.
+On a smaller device like a mobile phone all products will display vertically one by one and on larger devices they will show as a Bootstrap card-deck side by side up to 6 across at a time. Each card shows an image of the product and below that are the product details, price and input field where the user can select a quantity, clicking the add button will add the product to their shopping cart. On any pages other than the home/index page "Keto Pantry" can be clicked for quick access to the home/index page.
+ 
 
-**Login**
+**Cart Page**
 
-_*Note - User authentication was not required for this project so the modal is not currently functioning, authentication will be added in the future including user registration._
+The cart page shows the users a list 5 columns wide including, image, product name, quantity, price, remove.  Any products the user has added to their cart will be dispalyed and at the bottom the total price is displayed as well as a _proceed to checkout_ button.  In the cart area the user is able to increase or decrease the amount of any product or delete them from the cart entirely. Once the user is happy with their order they can click _proceed to checkout_ to purchase.
 
-The modal is intended to prevent users from altering recipes added by other users.  The modal (once functioning) will require the user to enter their email address and password before they are able to login.  Users will first need to register and logged in users will be able to add, edit or delete their own recipes.
+**Checkout Page**
 
-**Add and Edit Recipe Pages**
+At the top of this screen is a reminder to register if the user is not already so that they can get the additional bonuses of being a registered customer.  All products selected for purchase are shown on the right as bootstrap cards so that the user can easily see what they are buying.  There is a form that the user must fill out with their details including credit card information to be proceesed.  Once complete the user can click on submit payment which will then redirect them to a confirmation page.  ?????????????????????????????????
 
-These pages have an editable form with inputs for the recipe information.  Each time a new recipe is added a unique ID is created in the Mongo database which is then used to get the recipe from the database when required.
 
 
 ### **_Skeleton_**
@@ -102,7 +108,7 @@ As a user on the website I want the ability to easily find diet friendly recipes
 - Bootstrap was mainly used for positioning with its grid system to position containers. The card deck component was used to house each recipe.  Bootstrap was also used to create buttons, dropdowns and navbar.
 
 **Javascript**
-- Was used for image size restrictions and previews.
+- ??????????????????????????
 
 **JQuery**
 - Used for the navbar colour change on scroll.
@@ -111,19 +117,22 @@ As a user on the website I want the ability to easily find diet friendly recipes
 -   Python was used to implement the logic of this project.
 
 **Pillow**
--   Used to view images in Django
+-   Used to view images in Django.
 
 **Stripe**
+- Payment platform used for eCommerce.
 
 **WhiteNoise**
 
 **Google Fonts**
+-   Montserrat|Roboto fonts used throughout project.
 
 
 **Travis**
 -   Travis was used for continuous integration testing.
 
--   ?????????????????????????pep8???????????????????????????
+**PEP8**
+- Used as a guide for correct and consistant Python formating.
 
 
 **Heroku**
