@@ -38,10 +38,7 @@ def login(request):
                 try:
                     cart_get = Cart.objects.get(    # Gets an existing cart
                         user=user)
-                    request.session['cart'] = model_to_dict(cart_get)    
-                    # debug info
-                    # shows how to iterate over cart line items
-                    print('no of items in cart: {}'.format(cart_get.cartlineitem_set.all().count()))
+                    request.session['cart'] = model_to_dict(cart_get)                       
                     for cartLineItem in cart_get.cartlineitem_set.all():
                         print('Product: {}'.format(cartLineItem.product.description))
                 

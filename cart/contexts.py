@@ -9,7 +9,8 @@ def cart_contents(request):
     cart_items = []
     total = 0
     product_count = 0
-    if cartDict:
+
+    if request.user.is_authenticated:
         cart = Cart.objects.get(id=cartDict['id'])
         for cart_line_item in cart.cartlineitem_set.all():
             product = cart_line_item.product

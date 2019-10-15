@@ -39,7 +39,7 @@
 </form>
 </td>
 <td  class="text-center">${{ item.product.price }}</td>
-<td  class="text-center bin"><i class="fas fa-trash-alt fa-2x"></i></td>
+<td  class="text-center bin"><a href="{% url 'delete_item' product_id %}"></a><i class="fas fa-trash-alt fa-2x"></i></a></td>
 </tr>
 
 
