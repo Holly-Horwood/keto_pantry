@@ -75,7 +75,7 @@ def adjust_cart(request, product_id):
 
 #delete item from cart
 def delete_item(request, product_id):
-   quantity = int(request.POST['delete'])
+   quantity = request.POST.get('delete')
    cart = request.session.get('cart', {})
    cart.pop(product_id)
    request.session['cart'] = cart

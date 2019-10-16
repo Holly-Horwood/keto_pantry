@@ -9,6 +9,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
     content = models.TextField()
+    link = models.URLField(max_length=200, null=True, blank=True)
     created_date = models.DateTimeField(auto_now_add=True)
     published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     views = models.IntegerField(default=0)

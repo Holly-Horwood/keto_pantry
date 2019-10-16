@@ -26,6 +26,10 @@ body {
     color: #a79d9d;
 }
 
+.navbar-light.scroll {
+    background-color: #fff;
+}
+
 .fa-shopping-cart {
     background-color: #28a745
 }
@@ -56,6 +60,12 @@ body {
     color: #fff;
 }
 
+.total {
+    background: rgba(51,163,76,1);
+    background: linear-gradient(to right, rgba(51,163,76,1) 0%, rgba(51,163,76,1) 49%, rgba(113,243,104,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33a34c', endColorstr='#71f368', GradientType=1 );
+}
+
 footer {
     background-color: #fff;
 }
@@ -76,7 +86,7 @@ body {
 
 .nav-item {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
+    font-size: 1em;
     padding: 10px;
 }
 
@@ -181,12 +191,12 @@ a.navbar-brand {
 
 /*------------------------------------------------BLOG*/
 
-.blog-deck:first-of-type {
-    margin-top: 7vh;
+.blog-deck {
+    margin-top: 10vh;
 }
 
 .blog-card:last-of-type {
-    margin-bottom: 10vh;
+    margin-bottom: 15vh;
 }
 
 .blog-card {
@@ -236,6 +246,10 @@ a.navbar-brand {
     box-shadow: 10px 10px 5px 0px rgba(219,204,219,1);
 }
 
+.card, .product-card {
+    margin-bottom: 5%;
+}
+
 .product-title {
     font-weight: 500;
     margin-top: 2%;
@@ -271,6 +285,10 @@ a.navbar-brand {
     margin-left: 2%
 }
 
+.bin-btn {
+    text-align: center;
+}
+
 .cart-media, .cart-media-title {
     display: none;
 }
@@ -289,12 +307,12 @@ a.navbar-brand {
 
 /*--------------------------------------------CHECKOUT*/
 
-.summary {
-    margin-top: 15vh;
+.summary, .checkout-summary {
+    margin-top: 10vh;
 }
 
-.payment-form {
-    margin-bottom: 15vh;
+.summary-items p {
+    margin-bottom: 0;
 }
 
 .total {
@@ -302,21 +320,13 @@ a.navbar-brand {
     margin-top:2%;
 }
 
-.checkout-items-row {
-    margin-bottom: 1%;
-    float: right;
-    display: block;
-}	
-
-.checkout-total-row {
-    margin-top:2%;
-    float: right;
+#payment-form {
+    margin-bottom: 10vh;
 }
 
-.checkout-card-col {
-    float: right;
-    width: 50%;
-}
+
+
+
 
 /*---------------------------------------------FOOTER*/
 
@@ -351,10 +361,6 @@ footer {
         font-size: 2.5em;
     }
 
-    .navbar-light.scroll {
-        background-color: #fff;
-    }
-
     .banner {
         margin-top: 2%;
         margin-left: 58%;
@@ -364,8 +370,21 @@ footer {
         display: block;
     }
 
+    .checkout-items-row {
+        float: right;
+        margin-right: 5%;
+        margin-top: 15vh;
+        width: 50%;
+    }
+
+    #payment-form {
+        margin-left: 5%;
+        margin-top: 10vh;
+        width: 60%;
+    }
+
     
-    
+
 }
 
 /*------------------DESK TOP--------------------------*/
@@ -380,6 +399,10 @@ footer {
 
     a.navbar-brand {
         font-size: 3em;
+    }
+
+    .nav-item {
+        font-size: 1.5em;
     }
     
     .blogpost-row {

@@ -4,63 +4,74 @@
 
 
 {% block content %}
-
+<!--CART CONTAINER-->
 <div class="container cart-container">
+    <!--CART TITLE-->
     <div class="cart-title mt-3">
         <h2>Your Cart</h2>
     </div>
+    <!--CART COLUMN HEADERS-->
     <table class="table table-hover">
         <thead>
             <tr>
                 <th scope="col" class="cart-media-title text-center">Image</th>
                 <th scope="col" class="text-center">Product Name</th>
                 <th scope="col" class="text-center">Quantity</th>
-                <th scope="col" class="text-center">Quantity</th>
+                <th scope="col" class="text-center">Price</th>
                 <th scope="col" class="text-center">Remove</th>
             </tr>
         </thead>
+        <!--CART ITEMS-->
         <tbody>
             {% for item in cart_items %}
             <tr>
                 <td class="cart-media text-center"><img class="img-thumbnail cart-img text-center"
                         src="{{ MEDIA_URL }}{{ item.product.image }}" alt="photo of product"></td>
                 <td class="text-center">{{ item.product.name }}</td>
+
                 <td>
-                    <form class="form-inline  justify-content-center" method="post"
-                        action="{% url 'adjust_cart' item.id %}">
+                    <form class="form-inline  justify-content-center" method="POST" action="{% url 'adjust_cart' item.id %}">
                         {% csrf_token %}
                         <div class="form-group">
                             <label for="exampleInputAmount" class="sr-only">New Qty</label>
                             <div class="input-group">
-                                <input name="quantity" type="number" min="0" max="999"
-                                    class="form-control input-group-addon" placeholder="{{item.quantity}}"></div>
+                                <input name="quantity" type="number" min="0" max="999" value="1" class="form-control input-group-addon" placeholder="{{item.quantity}}">
+                            </div>
                         </div>
-</div>
-<button type="submit" class="btn btn-success amend-btn"><span class="glyphicon glyphicon-edit"
-        aria-hidden="true"></span>Amend</button>
-</form>
-</td>
-<td class="text-center">${{ item.product.price }}</td>
-<td class="text-center bin"><a href="#"></a><i class="fas fa-trash-alt fa-2x"></i></a></td>
-</tr>
-
-
-{% endfor %}
-<tr>
-    <th scope="row"></th>
-    <td colspan="2" class="text-right"><strong>Total</strong></td>
-    <td class="text-center"><strong>${{ total }}</strong></td>
-</tr>
-<tr>
-    <th scope="row"></th>
-    <td colspan="3" class="text-right ">
-        <form class="proceed d-flex justify-content-end" action="{% url 'checkout' %}">
-            <button class="btn btn-success"> Proceed To Checkout</button>
-        </form>
-    </td>
-</tr>
-</tbody>
-</table>
+                        <div>
+                            <button type="submit" class="btn btn-success amend-btn"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
+                        </div>    
+                    </form>
+                </td>
+                <td class="text-center">${{ item.product.price }}</td>
+                <td class="bin-btn">
+                    <form method="POST" action="{% url 'delete_item' item.id %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input name="remove" type="hidden" value="0" placeholder="0">
+                        </div>
+                        <div>
+                            <button class="bin"><i class="fas fa-trash-alt fa-2x"></i></button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <th scope="row"></th>
+                <td colspan="2" class="text-right"><strong>Total</strong></td>
+                <td class="text-center"><strong>${{ total }}</strong></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td colspan="3" class="text-right ">
+                    <form class="proceed d-flex justify-content-end" action="{% url 'checkout' %}">
+                        <button class="btn btn-success"> Proceed To Checkout</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 {% endblock %}
