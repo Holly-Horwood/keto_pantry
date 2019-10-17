@@ -40,8 +40,8 @@ def login(request):
                         user=user)
                     request.session['cart'] = model_to_dict(cart_get)                       
                     for cartLineItem in cart_get.cartlineitem_set.all():
-                        print('Product: {}'.format(cartLineItem.product.description))
-                
+                        print(cart_get)
+                    
                 except Cart.DoesNotExist:
                     cart = Cart(user=user)
                     cart.save()             # Create a new Cart
