@@ -73,11 +73,4 @@ def adjust_cart(request, product_id):
 
     return redirect(reverse('view_cart'))
 
-#delete item from cart
-def delete_item(request, product_id):
-   quantity = request.POST.get('delete')
-   cart = request.session.get('cart', {})
-   cart.pop(product_id)
-   request.session['cart'] = cart
 
-   return redirect(reverse('view_cart'))
