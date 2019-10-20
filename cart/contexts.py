@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404
 from products.models import Product
 from .models import Cart
 
-#Ensures cart items are available on every page  
+#Ensures cart items are available on every page using cart dictionary  
 
 def cart_contents(request):
     cartDict = request.session.get('cart', {})
