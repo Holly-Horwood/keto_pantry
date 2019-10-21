@@ -15,14 +15,14 @@ def view_cart(request):
 def add_to_cart(request, product_id):
     quantity = int(request.POST.get('quantity'))
 
-    cart = request.session.get('cart', {})
+    """ cart = request.session.get('cart', {})
     cart_item_qty = cart.get(product_id)
     if cart_item_qty:
         cart[product_id] += quantity
     else:    
-        cart[product_id] = cart.get(product_id, quantity)
+        cart[product_id] = cart.get(product_id, quantity) """
 
-    request.session['cart'] = cart
+    """ request.session['cart'] = cart """
     #Persisting cart to database for logged in users
     if request.user.is_authenticated:
         cart_model, created = Cart.objects.get_or_create(
