@@ -60,6 +60,10 @@ body {
     color: #fff;
 }
 
+.cross {
+    color: #e01010;
+}
+
 .total {
     background: rgba(51,163,76,1);
     background: linear-gradient(to right, rgba(51,163,76,1) 0%, rgba(51,163,76,1) 49%, rgba(113,243,104,1) 100%);
@@ -286,8 +290,9 @@ a.navbar-brand {
     margin-left: 2%
 }
 
-.bin-btn {
-    text-align: center;
+.cross {
+    border: none;
+    background: none;
 }
 
 .cart-media, .cart-media-title {

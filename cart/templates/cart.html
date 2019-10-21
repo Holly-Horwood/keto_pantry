@@ -17,6 +17,7 @@
                 <th scope="col" class="cart-media-title text-center">Image</th>
                 <th scope="col" class="text-center">Product</th>
                 <th scope="col" class="text-center">Quantity</th>
+                <th scope="col" class="text-center">Unit Price</th>
                 <th scope="col" class="text-center">Price</th>
                 <th scope="col" class="text-center">Remove</th>
             </tr>
@@ -25,11 +26,11 @@
         <tbody>
             {% for item in cart_items %}
             <tr>
-                <td class="cart-media text-center"><img class="img-thumbnail cart-img text-center"
+                <td class="cart-media text-center align-middle"><img class="img-thumbnail cart-img text-center"
                         src="{{ MEDIA_URL }}{{ item.product.image }}" alt="photo of product"></td>
-                <td class="text-center">{{ item.product.name }}</td>
+                <td class="text-center align-middle">{{ item.product.name }}</td>
 
-                <td>
+                <td class="align-middle">
                     <form class="form-inline  justify-content-center" method="POST" action="{% url 'adjust_cart' item.id %}">
                         {% csrf_token %}
                         <div class="form-group">
@@ -43,15 +44,16 @@
                         </div>    
                     </form>
                 </td>
-                <td class="text-center">${{ item.product.price }}</td>
-                <td class="bin-btn">
+                <td class="text-center align-middle">${{ item.product.price }}</td>
+                <td class="text-center align-middle">$</td>
+                <td class="cross-btn align-middle text-center">
                     <form method="POST" action="">
                         {% csrf_token %}
                         <div class="form-group">
                             <input name="remove" type="hidden" value="0" placeholder="0">
                         </div>
                         <div>
-                            <button class="bin"><i class="fas fa-trash-alt fa-2x"></i></button>
+                            <button class="cross fas fa-times fa-2x"></button>
                         </div>
                     </form>
                 </td>
@@ -59,12 +61,12 @@
             {% endfor %}
             <tr>
                 <th scope="row"></th>
-                <td colspan="2" class="text-right"><strong>Total</strong></td>
+                <td colspan="3" class="text-right"><strong>Total</strong></td>
                 <td class="text-center"><strong>${{ total }}</strong></td>
             </tr>
             <tr>
                 <th scope="row"></th>
-                <td colspan="3" class="text-right ">
+                <td colspan="4" class="text-right ">
                     <form class="proceed d-flex justify-content-end" action="{% url 'checkout' %}">
                         <button class="btn btn-success"> Proceed To Checkout</button>
                     </form>
