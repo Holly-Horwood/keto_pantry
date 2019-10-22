@@ -5,9 +5,9 @@
 
 {% block content %}
 <!--REGISTRATION PROMPT-->
-<div class="row d-flex prompt text-center">
+<div class="row d-flex prompt">
     <div class="col-sm-12 registration-prompt">
-        <h6><a href="{% url 'registration' %}">Have you registered?</a> Only registered users can shop.</h6>
+        <p><a href="{% url 'registration' %}"><strong>Have you registered?</strong></a> You must be registered to login and shop.</p>
     </div>
 </div>
 <!--LOGIN FORM-->
@@ -21,10 +21,4 @@
         <p class="reset"><a class="reset-link" href="{% url 'password_reset' %}">Reset Password</a></p>
     </form>
 </div>
-<!--FOOTER-->
-<footer>
-    <div class="container-fluid">
-        <p>Copyright &copy; Holly Horwood</p>
-    </div>
-</footer>
 {% endblock %}

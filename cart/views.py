@@ -13,7 +13,7 @@ def view_cart(request):
 
 # Add quantity of product to cart
 def add_to_cart(request, product_id):
-    quantity = int(request.POST.get('quantity'))
+    quantity = int(request.POST['quantity'])
 
     """ cart = request.session.get('cart', {})
     cart_item_qty = cart.get(product_id)

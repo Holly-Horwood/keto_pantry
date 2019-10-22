@@ -3,7 +3,6 @@ from products.models import Product
 from .models import Cart
 
 #Ensures cart items are available on every page using cart dictionary  
-
 def cart_contents(request):
     cartDict = request.session.get('cart', {})
     cart_items = []
@@ -14,7 +13,8 @@ def cart_contents(request):
         for cart_line_item in cart.cartlineitem_set.all():
             product = cart_line_item.product
             total += cart_line_item.quantity * product.price
+            line_total = cart_line_item.quantity * product.price
             product_count += cart_line_item.quantity
-            cart_items.append({'id': cart_line_item.id, 'quantity': cart_line_item.quantity, 'product': product})
+            cart_items.append({'id': cart_line_item.id, 'quantity': cart_line_item.quantity, 'product': product, 'line_total': line_total})
 
     return {'cart_items': cart_items, 'total': total, 'product_count': product_count}

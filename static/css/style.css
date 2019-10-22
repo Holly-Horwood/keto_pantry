@@ -155,7 +155,7 @@ a.navbar-brand {
     display: none;
 }
 
-.form + footer {
+form + footer {
     background-color: transparent;
 }
 
@@ -172,12 +172,12 @@ a.navbar-brand {
 
 /*----------------------------------------------LOGIN*/
 
-.login-container {
-    margin-top: 15vh;
-}
-
 .registration-prompt {
-    margin-top: 15vh
+    padding: 0;
+    margin-left: 300px;
+}
+.prompt {
+    margin-top: 30vh;
 }
 
 .login-title {
@@ -416,10 +416,7 @@ footer {
         margin-left: 300px;
     }
 
-    .login-container {
-        padding-top: 5%;
-    }
-
+    
  }
 
 

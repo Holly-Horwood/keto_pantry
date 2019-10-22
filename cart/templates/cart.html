@@ -16,8 +16,8 @@
             <tr>
                 <th scope="col" class="cart-media-title text-center">Image</th>
                 <th scope="col" class="text-center">Product</th>
-                <th scope="col" class="text-center">Quantity</th>
                 <th scope="col" class="text-center">Unit Price</th>
+                <th scope="col" class="text-center">Quantity</th>
                 <th scope="col" class="text-center">Price</th>
                 <th scope="col" class="text-center">Remove</th>
             </tr>
@@ -29,6 +29,7 @@
                 <td class="cart-media text-center align-middle"><img class="img-thumbnail cart-img text-center"
                         src="{{ MEDIA_URL }}{{ item.product.image }}" alt="photo of product"></td>
                 <td class="text-center align-middle">{{ item.product.name }}</td>
+                <td class="text-center align-middle">${{ item.product.price }}</td>
 
                 <td class="align-middle">
                     <form class="form-inline  justify-content-center" method="POST" action="{% url 'adjust_cart' item.id %}">
@@ -44,8 +45,7 @@
                         </div>    
                     </form>
                 </td>
-                <td class="text-center align-middle">${{ item.product.price }}</td>
-                <td class="text-center align-middle">$</td>
+                <td class="text-center align-middle">${{ item.line_total }}</td>
                 <td class="cross-btn align-middle text-center">
                     <form method="POST" action="">
                         {% csrf_token %}
