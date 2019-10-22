@@ -55,7 +55,7 @@ The blog page offers a simple list of responsive posts.  Each post has an image,
 
 **Shop Page**
 
-On a smaller device like a mobile phone all products will display vertically one by one and on larger devices they will show as a Bootstrap card-deck side by side up to 6 across at a time. Each card shows an image of the product and below that are the product details, price and input field where the user can select a quantity, clicking the add button will add the product to their shopping cart. On any pages other than the home/index page "Keto Pantry" can be clicked for quick access to the home/index page.
+User must be logged on to access the shop page, if they are not logged in the site will redirect them to the login page.  On a smaller device like a mobile phone all products will display vertically one by one and on larger devices they will show as a Bootstrap card-deck side by side up to 6 across at a time. Each card shows an image of the product and below that are the product details, price and input field where the user can select a quantity, clicking the add button will add the product to their shopping cart. On any pages other than the home/index page "Keto Pantry" can be clicked for quick access to the home/index page.
  
 
 **Cart Page**

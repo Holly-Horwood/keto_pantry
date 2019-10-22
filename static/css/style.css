@@ -176,6 +176,10 @@ a.navbar-brand {
     margin-top: 15vh;
 }
 
+.registration-prompt {
+    margin-top: 15vh
+}
+
 .login-title {
     font-family: 'Montserrat', sans-serif;
 }
@@ -313,13 +317,6 @@ a.navbar-brand {
 
 /*--------------------------------------------CHECKOUT*/
 
-.summary, .checkout-summary {
-    margin-top: 10vh;
-}
-
-.summary-items p {
-    margin-bottom: 0;
-}
 
 .total {
     font-size: 1.2em;
