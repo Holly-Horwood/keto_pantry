@@ -34,6 +34,7 @@ def login(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully logged in!")
+
                 # Check if user has a cart, create it if necessary
                 try:
                     cart_get = Cart.objects.get(    # Gets an existing cart
@@ -45,8 +46,8 @@ def login(request):
                     cart_get = Cart(user=user)
                     cart_get.save()             # Create a new Cart
                 request.session['cart'] = model_to_dict(cart_get)
-                
-                return redirect(reverse('index'))
+                    
+                return redirect(reverse('index')) 
             
             else:
                 login_form.add_error(None, "Your username or password is incorrect")

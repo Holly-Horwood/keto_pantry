@@ -93,10 +93,15 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     padding: 10px;
+    
 }
 
 .nav-item:hover {
     text-decoration: none;
+}
+
+.navbar-collapse {
+    text-align: right;
 }
 
 a.navbar-brand {
@@ -125,7 +130,7 @@ a.navbar-brand {
 }
 
 .banner-title {
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .banner + footer {
@@ -352,15 +357,9 @@ footer {
     body {
         font-size: 150%;
     }
+
     
-    .navbar {
-        background-color: transparent;
-    }
-
-    a.navbar-brand {
-        font-size: 2.5em;
-    }
-
+    
     .banner {
         margin-top: 2%;
         margin-left: 58%;
@@ -393,23 +392,15 @@ footer {
         font-size: 150%;
     }
 
-    a.navbar-brand {
-        font-size: 2.5em;
-    }
-
-    .nav-item {
-        font-size: 1.3em;
+    .banner-title {
+        font-size: 3em;
     }
     
     .blogpost-row {
         width: 80%;
     }
 
-    .bg-sign-img {
-        display: block;
-        background: rgba(246, 242, 246, 0.726);
-    }
-
+    
     .reg-container, .login-container {
         width: 30%;
         float: left;

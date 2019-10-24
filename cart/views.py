@@ -11,18 +11,20 @@ from products.models import Product
 def view_cart(request):
     return render(request, "cart.html")
 
+
+
 # Add quantity of product to cart
 def add_to_cart(request, product_id):
-    quantity = int(request.POST['quantity'])
+    quantity = int(request.POST.get('quantity'))
 
-    """ cart = request.session.get('cart', {})
+    cart = request.session.get('cart', {})
     cart_item_qty = cart.get(product_id)
     if cart_item_qty:
         cart[product_id] += quantity
     else:    
-        cart[product_id] = cart.get(product_id, quantity) """
+        cart[product_id] = cart.get(product_id, quantity)
 
-    """ request.session['cart'] = cart """
+    request.session['cart'] = cart
     #Persisting cart to database for logged in users
     if request.user.is_authenticated:
         cart_model, created = Cart.objects.get_or_create(
@@ -38,7 +40,7 @@ def add_to_cart(request, product_id):
         cart_line_item.save()
 
     return redirect(reverse('products'))
-
+    
 # Adjust quantity of product in cart
 def adjust_cart(request, product_id):
 
