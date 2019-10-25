@@ -11,8 +11,6 @@ from products.models import Product
 def view_cart(request):
     return render(request, "cart.html")
 
-
-
 # Add quantity of product to cart
 def add_to_cart(request, product_id):
     quantity = int(request.POST.get('quantity'))
@@ -40,9 +38,9 @@ def add_to_cart(request, product_id):
         cart_line_item.save()
 
     return redirect(reverse('products'))
-    
+
 # Adjust quantity of product in cart
-def adjust_cart(request, product_id):
+def adjust_cart(request, cart_line_item_id):
 
     if request.POST.get('quantity').isdigit():
 
@@ -51,27 +49,23 @@ def adjust_cart(request, product_id):
 
         #Persisting cart to database for logged in users
         if request.user.is_authenticated:
-            cart_model, created = Cart.objects.get_or_create(
-                user = User(id=request.user.id)
-            )
-            #Finds the matching product if none adds, updates quantity and saves to database
-            cart_line_item, created = CartLineItem.objects.get_or_create(
-                cart = Cart(id=cart_model.id),
-                product = Product(id=product_id)
-                )
-            if quantity > 0:        
-                cart_line_item.quantity=quantity
-                cart_line_item.save()
-            else:
-                cart_line_item.delete()  
+            
+            try:
+                #Finds the cart line item to be adjusted using the cart line item id, updates quantity and saves to database
+                cart_line_item = CartLineItem.objects.get(
+                    id = cart_line_item_id
+                    )
+                if quantity > 0:        
+                    cart_line_item.quantity=quantity
+                    cart_line_item.save()
+                else:
+                    cart_line_item.delete() 
 
-        #updates for session and removes deleted items from cart
-        if quantity > 0:
-            cart[product_id] = quantity
-        else:
-            cart.pop(product_id)
-        
-        request.session['cart'] = cart
+            except CartLineItem.DoesNotExist:
+                print("CartLineItem.DoesNotExist: id = {}" .format (cart_line_item_id))    
+            
+            except Exception, err:
+                print("unknown error: {}" .format (err))
 
     return redirect(reverse('view_cart'))
 

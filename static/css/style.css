@@ -71,9 +71,7 @@ body {
     padding: 1%;
 }
 
-footer {
-    background-color: #fff;
-}
+
 
 /*----------------------------------------------GENERAL*/
 
@@ -115,16 +113,13 @@ a.navbar-brand {
 /*----------------------------------------------INDEX*/
 
 .bg-img {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 80vh;
+    background: none important!;
 } 
 
 .banner {
     font-family: 'Montserrat', sans-serif;
     margin-right: 9%;
-    margin-top: 130%;
+    margin-top: 30vh;
     padding-top: 22%;
     text-align: center;
 }
@@ -358,11 +353,16 @@ footer {
         font-size: 150%;
     }
 
-    
+    .bg-img {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        height: 80vh;
+    }    
     
     .banner {
-        margin-top: 2%;
-        margin-left: 58%;
+        margin-left: 60%;
     }
 
     .cart-media, .cart-media-title {
