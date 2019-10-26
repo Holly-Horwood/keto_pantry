@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.models import User
+from django.contrib import messages
 from .models import Cart, CartLineItem
 from products.models import Product
 
@@ -66,7 +67,13 @@ def adjust_cart(request, cart_line_item_id):
             
             except Exception, err:
                 print("unknown error: {}" .format (err))
-
+    
     return redirect(reverse('view_cart'))
 
 
+def delete_from_cart(request, item_id):
+    item_to_delete = CartLineItem.objects.filter(pk=item_id)
+    if item_to_delete.exists():
+        item_to_delete[0].delete()
+        messages.info(request, "Item has been deleted")
+    return redirect(reverse('view_cart'))

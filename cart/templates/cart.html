@@ -47,10 +47,10 @@
                 </td>
                 <td class="text-center align-middle">${{ item.line_total }}</td>
                 <td class="cross-btn align-middle text-center">
-                    <form method="POST" action="">
+                    <form method="POST" action="{% url 'delete_item' item.id %}">
                         {% csrf_token %}
                         <div class="form-group">
-                            <input name="remove" type="hidden" value="0" placeholder="0">
+                            <input name="delete" type="hidden" value="0" placeholder="0">
                         </div>
                         <div>
                             <button class="cross fas fa-times fa-2x"></button>
