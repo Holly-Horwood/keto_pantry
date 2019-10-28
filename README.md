@@ -10,11 +10,23 @@ This website was designed for educational purposes only for the Code Institute. 
 
 ---
 
-1. [Motivation](#Motivation/Purpose)
-2. [UX](#UX)
-3. [User Story](#UserStory)
-4. [Technologies](#TechnologiesUsed)
+## **Table of Contents**
 
+- [Motivation](#Motivation/Purpose)
+- [UX](#UX)
+	- [Strategy](###Strategy)
+    - [Scope](#Scope)
+    - [Skeleton](#Skeleton)
+    - [Surface](#Surface)
+- [User Story](#UserStory)
+- [Technologies Used](#Technologies-Used)    
+- [Testing](#Testing)
+    - [Automated Testing](#Automated-Testing)
+    - [Manual Testing](#Manual-Testing)
+- [Future Updates](#Future-Updates) 
+- [Deployment](#Deployment)   
+- [Credits](#Credits)
+	
 
 ## **Motivation/Purpose**
 This is my fourth milestone project for the Full Stack Software Development course through Code Institute.  I decided to create this website which in the future I plan to link with my previous project [Keto Kitchen](https://keto-pantry.herokuapp.com).  I focused both sites on a Keto/Low Carb lifestyle which is essential for good health among Type 1 diabetics like myself. People with this condition often struggle to find diet appropriate food in this modern world of processed and sugary products, so I have created this site as an easy way for people to find the items they need to make healthy food choices.  In the future when the two sites are blended I hope to make this a business for myself helping those following this lifestyle to easily find the information and resources they need.
@@ -42,7 +54,7 @@ This is my fourth milestone project for the Full Stack Software Development cour
 **Home Page**
 
 The home/index page shows a navbar at the top of the screen with links to all pages plus a keyword search bar, on the far left is the websites name "Keto Pantry".  The navbar contains the following items when intially visited:
--    Register
+-   Register
 -   Login
 -   Blog
 -   Shop
@@ -53,7 +65,7 @@ The entire container is taken up by a background image and a banner has been add
 
 **Authentication Pages**
 
-When visiting the site initially the navbar on the home screen shows two authentcation options _Register_ and _Login_.  Users can opt to go to the registration page where they can fill out their user, contact information and create a password.  User that are already registered can simply click on the _Login_ menu option and enter their crudentials to login.  Once a user is logged in the menu will change now only showing the option to _Log Out_.  If the logged in users is an _administrator_ of the site they will also have an _Admin_ option on the navbar to access the backend so that they are able to update the website.  Any time a user logs in or out a message will appear on the screen to confirm the action.
+When visiting the site initially the navbar on the home screen shows two authentcation options _Register_ and _Login_.  Users can opt to go to the registration page where they can fill out their user, contact information and create a password.  User that are already registered can simply click on the _Login_ menu option and enter their crudentials to login.  Once a user is logged in the menu will change now only showing the option to _Log Out_.  If the logged in users is an _administrator_ of the site they will also have an _Admin_ option on the navbar to access the backend so that they are able to update the website.  Any time a user logs in or out a message will appear on the screen to confirm the action.  Only logged in users will have the ability to shop on the site.
 
 **Blog Page**
 
@@ -61,17 +73,16 @@ The blog page offers a simple list of responsive posts.  Each post has an image,
 
 **Shop Page**
 
-User must be logged on to access the shop page, if they are not logged in the site will redirect them to the login page.  On a smaller device like a mobile phone all products will display vertically one by one and on larger devices they will show as a Bootstrap card-deck side by side up to 6 across at a time. Each card shows an image of the product and below that are the product details, price and input field where the user can select a quantity, clicking the add button will add the product to their shopping cart. On any pages other than the home/index page "Keto Pantry" can be clicked for quick access to the home/index page.
+User must be logged on to access the shop page, if they are not logged in the site will redirect them to the registration page so that they can register if needed, if all ready registered they can click the _sign in_ link to login.  On a smaller device like a mobile phone all products will display vertically one by one and on larger devices they will show as a Bootstrap card-deck side by side up to 6 across at a time. Each card shows an image of the product and below that are the product details, price and input field where the user can select a quantity, clicking the add button will add the product to their shopping cart. On any pages other than the home/index page "Keto Pantry" can be clicked for quick access to the home/index page.
  
 
 **Cart Page**
 
-The cart page shows the users a list 5 columns wide including, image, product name, quantity, price, remove.  Any products the user has added to their cart will be dispalyed and at the bottom the total price is displayed as well as a _proceed to checkout_ button.  In the cart area the user is able to increase or decrease the amount of any product or delete them from the cart entirely. Once the user is happy with their order they can click _proceed to checkout_ to purchase.
+The cart page shows the users a list 6 columns wide including, image, product name, unit price, quantity, line price, remove.  Any products the user has added to their cart will be dispalyed and at the bottom the total price is shown as well as a _proceed to checkout_ button.  In the cart area the user is able to increase or decrease the amount of any product or delete them from the cart entirely. Once the user is happy with their order they can click _proceed to checkout_ to purchase.
 
 **Checkout Page**
 
-At the top of this screen is a reminder to register if the user is not already so that they can get the additional bonuses of being a registered customer.  All products selected for purchase are shown on the right as bootstrap cards so that the user can easily see what they are buying.  There is a form that the user must fill out with their details including credit card information to be proceesed.  Once complete the user can click on submit payment which will then redirect them to a confirmation page.  ?????????????????????????????????
-
+All products selected for purchase are shown first or on the right on smaller screens as bootstrap cards so that the user can easily see what they are buying.  There is a form that the user must fill out with their details including credit card information to be proceesed.  Once complete the user can click on submit payment which will then redirect them to a confirmation page. 
 
 
 ### **_Skeleton_**
@@ -92,13 +103,13 @@ I designed this site using modern neutral colours.  Different variations of gree
 
 ## **User Story**
 
-As a user on the website I want the ability to easily find diet friendly recipes. 
+As a user on the website I want the ability to easily find diet friendly recipe ingrediants and food. 
 
-**End user goal:** Find a recipe. 
+**End user goal:** Find an ingrediant or food. 
 
-**End business goal:** Make finding health conscious recipes easier.
+**End business goal:** Make finding health conscious supplies easier.
 
-**Acceptance criteria:** Able to search the site for recipes matching my search criteria and get full instruction to follow so I can make the recipe.
+**Acceptance criteria:** Able to search the site for ingrediants or food and purchase chosen items.
 
 ---
 
@@ -179,7 +190,7 @@ https://rating-widget.com/
 **Test Planning:**
   Automated testing was implemented using Pythons [unittest](https://docs.python.org/3/library/unittest.html) and can be viewed in the *test.py* file. All remaining tests were carried out manually by humans.  For the browser testing the users will interact with the map and click on all links and buttons and observe the results as well as viewing the site on different viewports. 
 
-#### **Automated Testing**
+### **Automated Testing**
 
 **Travis**
 -   Was used for continuous integration testing, checks all packages are valid and project compiles. Once configured all builds are passing.
@@ -197,7 +208,7 @@ https://rating-widget.com/
 
 The highest possible score is 100%
 
-#### **Manual Testing**
+### **Manual Testing**
 
 **Implementation:** 
  Users clicked on all buttons and links and interacted with the recipes in all possible variations, users also changed screen sizes throughout the process to make sure the site was responsive.
