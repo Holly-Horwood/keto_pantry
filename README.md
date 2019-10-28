@@ -10,6 +10,12 @@ This website was designed for educational purposes only for the Code Institute. 
 
 ---
 
+1. [Motivation](#Motivation/Purpose)
+2. [UX](#UX)
+3. [User Story](#UserStory)
+4. [Technologies](#TechnologiesUsed)
+
+
 ## **Motivation/Purpose**
 This is my fourth milestone project for the Full Stack Software Development course through Code Institute.  I decided to create this website which in the future I plan to link with my previous project [Keto Kitchen](https://keto-pantry.herokuapp.com).  I focused both sites on a Keto/Low Carb lifestyle which is essential for good health among Type 1 diabetics like myself. People with this condition often struggle to find diet appropriate food in this modern world of processed and sugary products, so I have created this site as an easy way for people to find the items they need to make healthy food choices.  In the future when the two sites are blended I hope to make this a business for myself helping those following this lifestyle to easily find the information and resources they need.
 
@@ -173,17 +179,31 @@ https://rating-widget.com/
 **Test Planning:**
   Automated testing was implemented using Pythons [unittest](https://docs.python.org/3/library/unittest.html) and can be viewed in the *test.py* file. All remaining tests were carried out manually by humans.  For the browser testing the users will interact with the map and click on all links and buttons and observe the results as well as viewing the site on different viewports. 
 
+#### **Automated Testing**
+
+**Travis**
+-   Was used for continuous integration testing, checks all packages are valid and project compiles. Once configured all builds are passing.
+[![Build Status](https://travis-ci.org/Holly-Horwood/keto_pantry.svg?branch=master)](https://travis-ci.org/Holly-Horwood/keto_pantry)
+
+**Coverage**
+
+**Lighthouse**
+    I also used chromes _Lighthouse_ extension.
+
+> Performance 96%
+> Accessibility 91%
+> Best practices 86%
+> SEO 90%
+
+The highest possible score is 100%
+
+#### **Manual Testing**
+
 **Implementation:** 
  Users clicked on all buttons and links and interacted with the recipes in all possible variations, users also changed screen sizes throughout the process to make sure the site was responsive.
 
 **Results:** 
  All buttons and links behaved as expected, and site overall worked as intended.
-
-**Travis**
--   Was used for continuous integration testing, checks all packages are valid and project compiles. Once configured all builds are passing.
-[![Build Status](https://travis-ci.org/Holly-Horwood/keto_pantry.svg?branch=master)](https://travis-ci.org/Holly-Horwood/keto_pantry) 
-
-### **Manual Testing** 
 
 #### Browser Testing: #### 
 
