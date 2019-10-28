@@ -65,7 +65,7 @@ def adjust_cart(request, cart_line_item_id):
             except CartLineItem.DoesNotExist:
                 print("CartLineItem.DoesNotExist: id = {}" .format (cart_line_item_id))    
             
-            except Exception, err:
+            except Exception as err:
                 print("unknown error: {}" .format (err))
     
     return redirect(reverse('view_cart'))
