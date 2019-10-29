@@ -14,9 +14,10 @@ This website was designed for educational purposes only for the Code Institute. 
 
 - [Motivation](#Motivation/Purpose)
 - [UX](#UX)
-	- [Strategy](###Strategy)
+	- [Strategy](#Strategy)
     - [Scope](#Scope)
     - [Skeleton](#Skeleton)
+        -[Wireframes](#Wireframes:)
     - [Surface](#Surface)
 - [User Story](#UserStory)
 - [Technologies Used](#Technologies-Used)    
@@ -89,10 +90,9 @@ All products selected for purchase are shown first or on the right on smaller sc
 
 **Wireframes:**
 
-![Balsamic Mockup1](static/images/kitchen-mockup4.png)
-![Balsamic Mockup2](static/images/kitchen-mockup3.png)
-![Balsamic Mockup3](static/images/kitchen-mockup2.png)
-![Balsamic Mockup4](static/images/kitchen-mockup1.png)
+Created using [Balsamiq](https://balsamiq.com/)
+
+[Keto Pantry Wireframes](https://github.com/Holly-Horwood/keto_pantry/static/media/images/Wireframes)
 
 ### **_Surface_** 
 
