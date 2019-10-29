@@ -18,7 +18,7 @@ This website was designed for educational purposes only for the Code Institute. 
     - [Scope](#Scope)
     - [Skeleton](#Skeleton)
     - [Surface](#Surface) 
-- [Wireframes](#Wireframes:)     
+- [Wireframes](#Wireframes)     
 - [User Story](#UserStory)
 - [Technologies Used](#Technologies-Used)    
 - [Testing](#Testing)
@@ -88,7 +88,7 @@ All products selected for purchase are shown first or on the right on smaller sc
 
 ### **_Skeleton_**
 
-###### **Wireframes:**
+###### **Wireframes**
 
 Created using [Balsamiq](https://balsamiq.com/) only the main wireframes are shown here, all other pages use Django form templates with some CSS styling.
 
@@ -292,6 +292,8 @@ Passed. No issues were found when used on Edge.
 - Image aspect ratio control for uploaded images.
 
 -   Add in new line functionality for adding and editing recipes.
+
+-   Add functioning email account for resetting passwords etc.
 
 
 ---

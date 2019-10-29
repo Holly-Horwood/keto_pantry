@@ -43,7 +43,7 @@ body {
     background-color: #fff
 }
 
-.blog-card, .checkout-container, .cart-container {
+.blog-card, .cart-container {
     background-color: #fff;
 }
 
@@ -317,6 +317,9 @@ form + footer {
 
 /*--------------------------------------------CHECKOUT*/
 
+.checkout-container {
+    margin-top: 15vh;
+}
 
 .total {
     font-size: 1.2em;
