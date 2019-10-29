@@ -21,7 +21,9 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
     <!--GOOGLE FONTS-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:300&display=swap" rel="stylesheet">   
-    <title>Keto Pantry</title>    
+    <title>Keto Pantry</title>  
+    {% block head_js %}
+    {% endblock head_js %}  
 </head>
 
 <body>
@@ -98,15 +100,7 @@
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script> 
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>  
-    {% block head_js %}
-    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-    <script type="text/javascript">
-        //<![CDATA[
-        Stripe.publishableKey = '{{ publishable }}';
-        //]]>
-    </script>
-    <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
-    {% endblock head_js %} 
+    
 </body>
 
 </html>
