@@ -17,8 +17,8 @@ This website was designed for educational purposes only for the Code Institute. 
 	- [Strategy](#Strategy)
     - [Scope](#Scope)
     - [Skeleton](#Skeleton)
-        -[Wireframes](#Wireframes:)
-    - [Surface](#Surface)
+        - [Wireframes](#Wireframes:)
+    - [Surface](#Surface)  
 - [User Story](#UserStory)
 - [Technologies Used](#Technologies-Used)    
 - [Testing](#Testing)
@@ -88,11 +88,15 @@ All products selected for purchase are shown first or on the right on smaller sc
 
 ### **_Skeleton_**
 
-**Wireframes:**
+###### **Wireframes:**
 
-Created using [Balsamiq](https://balsamiq.com/)
+Created using [Balsamiq](https://balsamiq.com/) only the main wireframes are shown here, all other pages use Django form templates with some CSS styling.
 
-[Keto Pantry Wireframes](https://github.com/Holly-Horwood/keto_pantry/static/media/images/Wireframes)
+[Index Wireframe](https://ketopantry.s3-ap-southeast-2.amazonaws.com/static/media/Wireframes/MockupIndex.png)
+[Blog Wireframe](https://ketopantry.s3-ap-southeast-2.amazonaws.com/static/media/Wireframes/MockupBlog.png)
+[Shop Wireframe](https://ketopantry.s3-ap-southeast-2.amazonaws.com/static/media/Wireframes/MockupProducts.png)
+[Cart Wireframe](https://ketopantry.s3-ap-southeast-2.amazonaws.com/static/media/Wireframes/MockupCart.png)
+[Checkout Wireframe](https://ketopantry.s3-ap-southeast-2.amazonaws.com/static/media/Wireframes/MockupCheckout.png)
 
 ### **_Surface_** 
 
