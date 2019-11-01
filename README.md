@@ -92,11 +92,11 @@ All products selected for purchase are shown first or on the right on smaller sc
 
 Created using [Balsamiq](https://balsamiq.com/) only the main wireframes are shown here, all other pages use Django form templates with some CSS styling.
 
-[Index Wireframe](https://ketopantry.s3-ap-southeast-2.amazonaws.com/static/media/Wireframes/MockupIndex.png)
-[Blog Wireframe](https://ketopantry.s3-ap-southeast-2.amazonaws.com/static/media/Wireframes/MockupBlog.png)
-[Shop Wireframe](https://ketopantry.s3-ap-southeast-2.amazonaws.com/static/media/Wireframes/MockupProducts.png)
-[Cart Wireframe](https://ketopantry.s3-ap-southeast-2.amazonaws.com/static/media/Wireframes/MockupCart.png)
-[Checkout Wireframe](https://ketopantry.s3-ap-southeast-2.amazonaws.com/static/media/Wireframes/MockupCheckout.png)
+-   [Index Wireframe](https://ketopantry.s3-ap-southeast-2.amazonaws.com/static/media/Wireframes/MockupIndex.png)
+-   [Blog Wireframe](https://ketopantry.s3-ap-southeast-2.amazonaws.com/static/media/Wireframes/MockupBlog.png)
+-   [Shop Wireframe](https://ketopantry.s3-ap-southeast-2.amazonaws.com/static/media/Wireframes/MockupProducts.png)
+-   [Cart Wireframe](https://ketopantry.s3-ap-southeast-2.amazonaws.com/static/media/Wireframes/MockupCart.png)
+-   [Checkout Wireframe](https://ketopantry.s3-ap-southeast-2.amazonaws.com/static/media/Wireframes/MockupCheckout.png)
 
 ### **_Surface_** 
 
@@ -240,7 +240,7 @@ Passed. No issues were found when used on Edge.
 
 #### **Individual Page Testing:**
 
-**Home**
+**Home/Index**
 
 - Any errors found via validators were corrected.  Several different searches were entered into the search area, when search was clicked the page redirected to the results page as expected and showed any recipes matching the search criteria selected.  The image on the card for each recipe was clicked to ensure this redirected to the correct full recipe, all images behaved as expected.  From the full recipe page the 'recipe' nav item was clicked and that returned the user to the idex.html page again.  All recipes are showing the correct names and details as per the database.  The 'full recipe' card button was also clicked on each recipe to ensure the user would be redirected to the correct page, this worked as expected. The login nav item was also clicked, this links to a non functioning login modal, this will be made functional in the future but for this project is not required to work, the modal behaves as intended at this stage.  All colour and text is consistant, all all elements are aligned correctly.
 
@@ -300,75 +300,81 @@ Passed. No issues were found when used on Edge.
 
 ## **Deployment**
 
-This project was created using Visual Studio Code (VSCode).  Preparation for deployment is as follows:
+It's recommended to work within a virtual environment.  Please note that Python 2.7 was used for this project.
 
-### **Running The Code Locally:**
+To run this project locally you will need the following:
 
-- Go to my repository https://github.com/Holly-Horwood/keto-kitchen
+-   IDE I used [Microsoft Visual Studio Code](https://code.visualstudio.com/)
+-   [Python](https://www.python.org/downloads/) to run the application
+-   [PIP](https://pip.pypa.io/en/stable/installing/) to install all requirements
+
+
+
+#### **Running The Code Locally:**
+
+- Go to my repository https://github.com/Holly-Horwood/keto_pantry
 - Click on the clone or download button
 - In the Clone with HTTPs section, click  to copy the clone URL for my repository.
 - Open your environment terminal
 - Type `git clone` into the command line and then paste my URL that you copied.
 - Press enter and the clone will be created.
+-   In the terminal type `cd env/bin` then `. activate` then `cd ../../` to create a virtual environment and return to the app folder
 
-### **GitHub** ###
+#### **GitHub** 
 
 All coding was committed and pushed to my Github repository at:
 
-https://github.com/Holly-Horwood/keto-kitchen
+https://github.com/Holly-Horwood/keto_pantry
 
-It was also published on Github pages at:
 
-https://holly-horwood.github.io/keto-kitchen/
-
-### **Deploying to Github Once Cloned and Edited** ###
+#### **Deploying to Github Once Cloned and Edited** ###
 
 - In your terminal type `git add .` to stage all pending updates
 - Type `git commit -m "example massage"` add your own message explaining what you are committing.
 - Type `git push -u origin master` to push to my repository
 
 
-### **Heroku**
+#### **Remote Deployment**
 
-- I created a new app in heroku called keto-kitchen-hollyci.
+- I created a new app in [Heroku](https://heroku.com) called keto-pantry.
 <br>
--  In the terminal intiialise a new git repository:
-    *    `git init` we want to link the GitHub repo to the app in heroku 
-    *   `https://keto-kitchen-hollyci.herokuapp.com/`
-<br>
-- In VSCode *app.py* set the environment variables for Heroku
-    *   ```app.run(host=os.environ.get('IP', '127.0.0.1'),  port=int(os.environ.get('PORT', '8080')),```
-<br>
--   Then in *config.py* add:
-    *   `MONGO_URI = os.environ.get('MONGO_URI')` 
-<br>
-- Go back to *Heroku* and in the project under *settings* and *config vars* add: 
-    *   `IP = '0.0.0.0'`
-    *   `PORT = 5000`
-    *   `MONGO_URI = mongodb+srv://nz_user:password@myfirstcluster-clbrq.mongodb.net/keto_kitchen?retryWrites=true&w=majority`
+-   Create a requirements.txt file
+     * `pip3 freeze --local > requirements.txt`
 <br>
 - Add a *Procfile* with the following:
 
-    *   `echo web: python run.py >Procfile`
-    * In the Procfile add `web: python app.py -p $PORT`  *this is how Heroku runs the application*
-    * `heroku ps:scale web=1` *This will start the app once it has deployed*
-
+    *   `web: gunicorn keto_pantry.wsgi:application >Procfile`
+    *   `release: python manage.py migrate >Procfile`
 <br>
-
-- Push to Github:
-  * In terminal type `git add .`
-  * `git commit -m "add a meaningful message here"`
-  * `git push -u origin master`
-  * enter username:
-  * enter password:
+-   Go to the [Heroku](https://heroku.com) website to sign up. Create your new project by clicking the *New* button. 
 <br>
-- In Heroku go to the *deploy* tab
+-   Click on the *Resources* tab and click on *add-ons* and search for *Heroku Postgres*. Select the free Hobby level (this creates a remote database that you will use instead of sqlite3) Back in your IDE you will need to update your env.py file with your new database url.
+<br>
+-   In the Heroku *Settings* tab click on *the *Reveal Config Vars* to add your environmental variables. 
+<br>
+- Update your IDE settings.py file to connect to the remote database.  For example: 
+    *   `import os`
+    *   `import dj_database_url`
+    *   `if "DATABASE_URL" in os.environ:
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+else:
+    print("Database URL not found. Using SQLite instead")
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }`
+<br>
+-   Re-build the migrations and create a superuser for your postgres database.
+<br>
+-   Go to [Amazon AWS](https://aws.amazon.com/) to create an account so that you can host your static and media files. You'll nedd to create an S3 Bucket, here's a video to help [S3 Tutorial](https://www.youtube.com/watch?v=9HsEMyKrlnw)
 
-- Scroll down to *manual deploy* and select *deploy branch*
+- To push your static files to AWS type `python manage.py collectstatic` into your terminal and select *yes* when prompted.
 
-- After build is successful go back up and select to *auto deploy*
-
-- Finally login to *Travis* to check testing is still working
+-   Go to [Stripe](https://stripe.com/ie) payment gateway to sign up for a free account. In the `Developers` tab click on API Keys. Here you will find a *publishable key* and *secret key* both will need to be added to your env.py as environment variables so they can then be linked to in the project.
+<br>
+- You should now be ready for remote deployment.
 
 
 ---
