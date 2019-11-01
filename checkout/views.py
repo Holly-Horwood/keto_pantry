@@ -11,6 +11,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from products.models import Product
 from cart.models import Cart
+from cart.contexts import cart_contents
 import stripe
 
 # Create your views here.
@@ -27,18 +28,20 @@ def checkout(request):
             order = order_form.save(commit=False)
             order.date = timezone.now()
             order.save()
+            
+            cart_contents(request)
 
-            cart = request.session.get('cart', {})
-            total = 0
-            for id, quantity in cart.items():
-                product = get_object_or_404(Product, pk=id)
-                total += quantity * product.price
-                order_line_item = OrderLineItem(
-                    order=order,
-                    product=product,
-                    quantity=quantity
-                )
-                order_line_item.save()
+            # cart = request.session.get('cart', {})
+            # total = 0
+            # for id, quantity in cart.items():
+            #     product = get_object_or_404(Product, pk=id)
+            #     total += quantity * product.price
+            #     order_line_item = OrderLineItem(
+            #         order=order,
+            #         product=product,
+            #         quantity=quantity
+            #     )
+            #     order_line_item.save()
             
             try:
                 customer = stripe.Charge.create(

@@ -2,3 +2,4 @@ env.py
 *.png
 static/
 media/
+stripe.py
