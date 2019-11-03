@@ -129,7 +129,7 @@ As a user on the website I want the ability to easily find diet friendly recipe 
 - Bootstrap was mainly used for positioning with its grid system to position containers. The card deck component was used to house each recipe.  Bootstrap was also used to create buttons, dropdowns and navbar.
 
 **Javascript**
-- ??????????????????????????
+- Used for integrating with Stripe
 
 **JQuery**
 - Used for the navbar colour change on scroll.
@@ -144,6 +144,7 @@ As a user on the website I want the ability to easily find diet friendly recipe 
 - Payment platform used for eCommerce.
 
 **WhiteNoise**
+-   Used to serve static files
 
 **Google Fonts**
 -   Montserrat|Roboto fonts used throughout project.
@@ -169,7 +170,7 @@ https://rating-widget.com/
 ### **Other resources:**
 
 **Stack Overflow**
-- 
+- Used as a resource to find help with code issues
 
 **YouTube**
 - Navbar colour change on scroll - Code courtesy of System 22 I.T. Solutions https://www.youtube.com/watch?v=AM-GT_0Uu5w
@@ -189,18 +190,22 @@ https://rating-widget.com/
 
 **Running the Code**
 
-- Click on the following link to access the live site at Github pages https://github.com/Holly-Horwood/keto_kitchen or for Heroku https://keto-kitchen-hollyci.herokuapp.com/
+- Click on the following link to access the live site at Github pages [Keto Pantry on GitHub](https://github.com/Holly-Horwood/keto_pantry) or for Heroku [Keto Pantry on Heroku](https://keto-pantry.herokuapp.com/)
 
 **Test Planning:**
-  Automated testing was implemented using Pythons [unittest](https://docs.python.org/3/library/unittest.html) and can be viewed in the *test.py* file. All remaining tests were carried out manually by humans.  For the browser testing the users will interact with the map and click on all links and buttons and observe the results as well as viewing the site on different viewports. 
+  Automated testing was implemented using Djangos [TestCase](https://docs.djangoproject.com/en/2.2/topics/testing/overview/)Each app within the project will have two files that can be viewed *tests_views.py* and  *tests_forms.py*. All remaining tests were carried out manually by humans.  For the browser testing the users will interact with all pages of the site as well as click on all links and buttons and fill out all forms to observe the results as well as viewing the site on different viewports. 
 
 ### **Automated Testing**
+
+**TestCase**
+-   TestCase was used for automated testing it uses Pythons standard library unittest.   Using this I built ?????? different tests for most of my Python views, forms and models.  All tests created passed.
 
 **Travis**
 -   Was used for continuous integration testing, checks all packages are valid and project compiles. Once configured all builds are passing.
 [![Build Status](https://travis-ci.org/Holly-Horwood/keto_pantry.svg?branch=master)](https://travis-ci.org/Holly-Horwood/keto_pantry)
 
 **Coverage**
+-   Coverage was used to indentify any areas that had been missed in my TestCase builds, I could then add any extra tests that were needed.
 
 **Lighthouse**
     I also used chromes _Lighthouse_ extension.
@@ -215,7 +220,7 @@ The highest possible score is 100%
 ### **Manual Testing**
 
 **Implementation:** 
- Users clicked on all buttons and links and interacted with the recipes in all possible variations, users also changed screen sizes throughout the process to make sure the site was responsive.
+ Users clicked on all buttons and links and interacted with each page in all possible variations, users also changed screen sizes throughout the process to make sure the site was responsive.
 
 **Results:** 
  All buttons and links behaved as expected, and site overall worked as intended.
@@ -242,19 +247,23 @@ Passed. No issues were found when used on Edge.
 
 **Home/Index**
 
-- Any errors found via validators were corrected.  Several different searches were entered into the search area, when search was clicked the page redirected to the results page as expected and showed any recipes matching the search criteria selected.  The image on the card for each recipe was clicked to ensure this redirected to the correct full recipe, all images behaved as expected.  From the full recipe page the 'recipe' nav item was clicked and that returned the user to the idex.html page again.  All recipes are showing the correct names and details as per the database.  The 'full recipe' card button was also clicked on each recipe to ensure the user would be redirected to the correct page, this worked as expected. The login nav item was also clicked, this links to a non functioning login modal, this will be made functional in the future but for this project is not required to work, the modal behaves as intended at this stage.  All colour and text is consistant, all all elements are aligned correctly.
+- Any errors found via validators were corrected.  The user clicked on registration and filled out the registration form before logging out and back in again to test that login was also working.  The user also clicked on all navbar tabs to ensure each page loaded as expected and clicked on the 'start shopping' button to check it redirected as intended.  All colour and text is consistant, all all elements are aligned correctly.
 
-**Full Recipe**
+**Blog**
 
-- Any errors found via validators were corrected.  Each recipe was checked to ensure the layout was as expected which it was.  Clicking on the Keto Kitchen logo on the top left redirects to the home page.  The 'edit' button redirects to the appropriate recipe ID in 'editrecipe.html' and the 'delete' button removes the recipe from the website and database respectively. All colour and text is consistant, all all elements are aligned correctly.
+- Any errors found via validators were corrected.  All blogs display as expected and are responsive changing layout as the viewports size is changed.  Posts are linking correctly with database and displaying the correct text, images and working links.  Each link redirects to a seperate page using `target="_blank"` All colour and text is consistant, all elements are aligned correctly.
 
-**Edit Recipe & Add Recipe**
+**Shop**
 
--   Both pages are almost identical and any errors found via validators have been corrected.  In both all fields are editable and once the update or add recipe button is clicked the page will save everything to the database and populate the website.  There are some checks in place that ensure all fields are completed so if any are left blank the user is prompted to fill them out before continuing, all areas on this page are working as expected.  The images also have Javascript to check for image sizes before they are uploaded, images will also be previewed so the user can ensure they have selected the correct image for their recipe. Clicking on the Keto Kitchen logo on the top left redirects to the home page. All colour and text is consistant, all all elements are aligned correctly.
+-  Any errors found via validators were corrected.  Page was tested for responsiveness and behaved as expected.  Database is connected and all products are displayed with the corrrect information.  Adding a product updated the cart as intended. All colour and text is consistant, all all elements are aligned correctly.
 
-**Search Results**
+**Cart**
 
-- Any errors found via validators were corrected. The page was tested by searching for several different recipes and ensuring the returned results matched the Mongo database.  All search options appear to be working correctly and returning the expected results.  The search area itself is populated with the original search criteria as expected so the user can see what they originally searched for. Clicking on the Keto Kitchen logo on the top left redirects to the home page. All colour and text is consistant, all all elements are aligned correctly.
+- Any errors found via validators were corrected. Page was tested for responsiveness and behaved as expected.  Cart displayed all products added during the shop process.  Quantity amend was increased and decreased to check that each item updated correctly which they did.  The Remove button was clicked to delete the line item, this was then checked against the database to ensure the line item was removed entirely which it was.  'Proceed to checkout' was also checked to ensure it redirected correctly and behaved as expected. All colour and text is consistant, all all elements are aligned correctly.
+
+**Checkout**
+
+- Any errors found via validators were corrected. Page was tested for responsiveness and behaved as expected.  The summary was viewed and showed the expected summary and breakdown of each line item and correct total.  The form was filled out using a dummy credit card number to ensure the Stripe payment was processed.  The database was then checked and all cart line items were deleted as expected and the stripe developers website showed that the payment had gone through successfully. All colour and text is consistant, all all elements are aligned correctly.
 
 #### **External Testing**
 
@@ -262,16 +271,14 @@ Passed. No issues were found when used on Edge.
 -   Responsive design testing was done using google chrome dev tools to resize the screen on each page, all pages are responsive as intended.
 
 **W3C Markup & CSS Valiadators**
-- Used to check validity of HTML and CSS code used in this project, both returned no errors at completion.  W3C did see Jinja as errors even though they were not.
+- Used to check validity of HTML and CSS code used in this project, both returned no errors at completion.  
 
 **JSHint**
 - Used to check all JS code for errors, none present on completion of this project.
 
 #### **Issues:**
 
-- The preview images for the edit recipe add recipe pages are not working correctly for aspect ration.  In the future some type image size control will be added to handle this problem.
-
-- On edit the image must be added again or it will default to the alt, this will be fixed in a future update.
+- Initially Stripe checkout wasn't working and the console complained it was due to an error with the Stripe key.  I spoke with Stripe and it was actually an issue with the cart id which was resolved.
 
 ---
 
