@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import stripe
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -12,7 +13,7 @@ from django.contrib.auth.models import User
 from products.models import Product
 from cart.models import Cart
 from cart.contexts import cart_contents
-import stripe
+
 
 # Create your views here.
 stripe.api_key = settings.STRIPE_SECRET
@@ -29,19 +30,17 @@ def checkout(request):
             order.date = timezone.now()
             order.save()
             
-            cart_contents(request)
-
-            # cart = request.session.get('cart', {})
-            # total = 0
-            # for id, quantity in cart.items():
-            #     product = get_object_or_404(Product, pk=id)
-            #     total += quantity * product.price
-            #     order_line_item = OrderLineItem(
-            #         order=order,
-            #         product=product,
-            #         quantity=quantity
-            #     )
-            #     order_line_item.save()
+            cart = request.session.get('cart', {})
+            total = 0
+            for id, quantity in cart.items():
+                product = get_object_or_404(Product, pk=id)
+                total += quantity * product.price
+                order_line_item = OrderLineItem(
+                    order=order,
+                    product=product,
+                    quantity=quantity
+                )
+                order_line_item.save()
             
             try:
                 customer = stripe.Charge.create(

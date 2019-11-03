@@ -2,4 +2,5 @@ env.py
 *.png
 static/
 media/
-stripe.py
+stripe_key.py
+htmlcov
