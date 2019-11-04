@@ -4,7 +4,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from accounts.views import index, logout, login, registration
 from accounts import urls as accounts_urls
-from accounts import url_reset
+from . import urls_reset
 from products import urls as urls_products
 from products.views import all_products
 from cart import urls as urls_cart

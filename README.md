@@ -193,7 +193,7 @@ https://rating-widget.com/
 - Click on the following link to access the live site at Github pages [Keto Pantry on GitHub](https://github.com/Holly-Horwood/keto_pantry) or for Heroku [Keto Pantry on Heroku](https://keto-pantry.herokuapp.com/)
 
 **Test Planning:**
-  Automated testing was implemented using Djangos [TestCase](https://docs.djangoproject.com/en/2.2/topics/testing/overview/)Each app within the project will have two files that can be viewed *tests_views.py* and  *tests_forms.py*. All remaining tests were carried out manually by humans.  For the browser testing the users will interact with all pages of the site as well as click on all links and buttons and fill out all forms to observe the results as well as viewing the site on different viewports. 
+  Automated testing was implemented using Djangos [TestCase](https://docs.djangoproject.com/en/2.2/topics/testing/overview/)Test files can be viewed under each app *tests_views.py* and  *tests_forms.py*. All remaining tests were carried out manually by humans.  For the browser testing the users will interact with all pages of the site as well as click on all links and buttons and fill out all forms to observe the results as well as viewing the site on different viewports. 
 
 ### **Automated Testing**
 
@@ -284,24 +284,11 @@ Passed. No issues were found when used on Edge.
 
 ## **Future Updates**
 
-- A functioning modal and user authentication including registration.
+- An additional view to showcase categories making finding items easier.
 
-- Keyword search bar and more search options.
+- More options for the Keyword search bar.
 
-- User review section and change the current ratings widget to something better.
-
-- Print recipe button.
-
-- Connect to Pinterest.
-
-- Pagination for all sized devices and scroll down arrow for smaller devices.
-
-- Image aspect ratio control for uploaded images.
-
--   Add in new line functionality for adding and editing recipes.
-
--   Add functioning email account for resetting passwords etc.
-
+- Shopper product review section.
 
 ---
 
