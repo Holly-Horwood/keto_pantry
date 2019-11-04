@@ -2,7 +2,7 @@
 # Fourth Milestone Project by Holly Horwood
 
 [Keto Pantry Website](https://keto-pantry.herokuapp.com)
-
+[![Build Status](https://travis-ci.org/Holly-Horwood/keto_pantry.svg?branch=master)](https://travis-ci.org/Holly-Horwood/keto_pantry)
 ---
 
 ## **Disclaimer:** 
@@ -289,6 +289,8 @@ Passed. No issues were found when used on Edge.
 - More options for the Keyword search bar.
 
 - Shopper product review section.
+
+- Add email configuration for authentication email replies.
 
 ---
 
