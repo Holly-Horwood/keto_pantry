@@ -22,16 +22,24 @@ body {
     color: #706868;
 }
 
-.navbar-light a.navbar-brand:hover {
-    color: #a79d9d;
-}
-
 .navbar-light.scroll {
     background-color: #fff;
 }
 
+.navbar-collapse {
+    background-color: #f8f9fab3;
+}
+
+footer.scroll {
+    background-color: #fff; 
+}
+
 .fa-shopping-cart {
     background-color: #28a745
+}
+
+.table {
+    color: #706868;
 }
 
 .banner {
@@ -100,6 +108,8 @@ body {
 
 .navbar-collapse {
     text-align: right;
+    padding: 1%;
+    margin-left: 50%;
 }
 
 a.navbar-brand {
@@ -255,9 +265,9 @@ form + footer {
     box-shadow: 10px 10px 5px 0px rgba(219,204,219,1);
 }
 
-.card, .product-card {
-    margin-bottom: 5%;
-}
+div.card-deck.product-deck div.card.product-card {
+    margin-bottom: 10px;
+}   
 
 .product-title {
     font-weight: 500;
@@ -366,6 +376,7 @@ footer {
     
     .banner {
         margin-left: 60%;
+        margin-top: 20%;
     }
 
     .cart-media, .cart-media-title {
@@ -395,8 +406,19 @@ footer {
         font-size: 150%;
     }
 
+    .navbar-collapse {
+        margin-left: 0;
+        background-color: transparent;
+        margin-right: 10px;
+    }
+
     .banner-title {
         font-size: 3em;
+    }
+
+    .banner {
+        padding-top: 13%;
+        margin-left: 60%;
     }
     
     .blogpost-row {
@@ -425,4 +447,9 @@ footer {
         font-size: 1.5em;
     }
 
- }
+    .banner {
+        padding-top: 10%;
+        margin-left: 58%;
+    }
+
+ }  
