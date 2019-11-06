@@ -13,7 +13,7 @@ class TestBlogViews(TestCase):
     def setUp(self):
         self.Client = Client()
         self.get_posts_url = reverse('get_posts')
-        self.post_detail_url = reverse('post_detail' pk)
+        self.post_detail_url = reverse('post_detail' post_id)
         self.create_or_edit_post_url = reverse('create_or_edit_post')
 
     def test_get_posts(self):
