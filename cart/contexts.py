@@ -18,3 +18,4 @@ def cart_contents(request):
             cart_items.append({'id': cart_line_item.id, 'quantity': cart_line_item.quantity, 'product': product, 'line_total': line_total})
 
     return {'cart_items': cart_items, 'total': total, 'product_count': product_count}
+

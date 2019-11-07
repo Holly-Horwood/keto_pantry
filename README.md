@@ -198,7 +198,7 @@ https://rating-widget.com/
 ### **Automated Testing**
 
 **TestCase**
--   TestCase was used for automated testing it uses Pythons standard library unittest.   Using this I built ?????? different tests for most of my Python views, forms and models.  All tests created passed.
+-   TestCase was used for automated testing it uses Pythons standard library unittest.   I built different tests for most of my Python views, forms and models.  All tests created passed.
 
 **Travis**
 -   Was used for continuous integration testing, checks all packages are valid and project compiles. Once configured all builds are passing.
@@ -279,6 +279,8 @@ Passed. No issues were found when used on Edge.
 #### **Issues:**
 
 - Initially Stripe checkout wasn't working and the console complained it was due to an error with the Stripe key.  I spoke with Stripe and it was actually an issue with the cart id which was resolved.
+
+- Due to issues with my own email service provider I was unable to get real email responses to work on the site for authentication purposes.  I have however setup *email backend* in the *settings.py* file for testing.
 
 ---
 

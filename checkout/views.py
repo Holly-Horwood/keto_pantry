@@ -29,18 +29,20 @@ def checkout(request):
             order = order_form.save(commit=False)
             order.date = timezone.now()
             order.save()
-            
-            cart = request.session.get('cart', {})
+
+            cart_contents(request)
+            cartDict = request.session.get('cart', {})
+            cart_items = []
             total = 0
-            for id, quantity in cart.items():
-                product = get_object_or_404(Product, pk=id)
-                total += quantity * product.price
-                order_line_item = OrderLineItem(
-                    order=order,
-                    product=product,
-                    quantity=quantity
-                )
-                order_line_item.save()
+            product_count = 0
+            if cartDict:
+                cart = Cart.objects.get(id=cartDict['id'])
+                for cart_line_item in cart.cartlineitem_set.all():
+                    product = cart_line_item.product
+                    total += cart_line_item.quantity * product.price
+                    line_total = cart_line_item.quantity * product.price
+                    product_count += cart_line_item.quantity
+                    cart_items.append({'id': cart_line_item.id, 'quantity': cart_line_item.quantity, 'product': product, 'line_total': line_total})
             
             try:
                 customer = stripe.Charge.create(
@@ -79,4 +81,4 @@ def checkout(request):
         })
     
     return render(request, "checkout.html", {"order_form": order_form, "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})
-
+    # return {'cart_items': cart_items, 'total': total, 'product_count': product_count}

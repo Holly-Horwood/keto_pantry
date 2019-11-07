@@ -17,5 +17,3 @@ class ProductModelTests(TestCase):
         self.assertEqual(product.name, self.name)
         self.assertEqual(product.price, '12.50')
         
-
-      
