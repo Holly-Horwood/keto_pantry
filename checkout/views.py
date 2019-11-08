@@ -5,6 +5,7 @@ import stripe
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.forms import model_to_dict
 from .forms import MakePaymentForm, OrderForm
 from .models import OrderLineItem
 from django.conf import settings
@@ -13,6 +14,7 @@ from django.contrib.auth.models import User
 from products.models import Product
 from cart.models import Cart
 from cart.contexts import cart_contents
+
 
 
 # Create your views here.
@@ -65,6 +67,11 @@ def checkout(request):
                             user = User(id=request.user.id)
                         )
                         cart_model.delete()                             #if cart exists it will delete it 
+                        
+                        cart_get = Cart(user=request.user)
+                        cart_get.save()                                 #creates a new cart
+                        request.session['cart'] = model_to_dict(cart_get)  
+                                                   
                     except Cart.DoesNotExist:
                         cart_model = None                               #if cart doesn't exist does nothing    
                 
