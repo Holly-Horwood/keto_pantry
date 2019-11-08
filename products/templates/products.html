@@ -18,13 +18,13 @@
                     <p class="product-description">{{ product.description }}</p>
                     <p class="product-price">$ {{ product.price }} NZD</p>
 
-                    <form method="post" action="{% url 'add_to_cart' product.id %}">
+                    <form id="productAdd" name="addQty" method="post" action="{% url 'add_to_cart' product.id %}">
                         {% csrf_token %}
                         <div class="input-product-group">
-                            <input class="product-qty" name="quantity" type="number" min="1" max="999" class="form-control"
+                            <input class="product-qty" name="quantity" type="number" min="1" max="999" class="form-control required"
                                 placeholder="Quantity">
                             <span class="input-group-btn">
-                                <button class="btn btn-success btn-sm" type="submit">Add</button>
+                                <button class="btn btn-success btn-sm" type="submit" va>Add</button>
                             </span>
                         </div>
                     </form>
@@ -34,4 +34,9 @@
     </div>
     {% endfor %}
 </div>
+<footer>
+    <div class="footer container-fluid">
+        <p>Copyright &copy; Holly Horwood</p>
+    </div>
+</footer>
 {% endblock %}

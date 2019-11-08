@@ -126,10 +126,10 @@ As a user on the website I want the ability to easily find diet friendly recipe 
 - Used to add style to the web page.
   
 **Bootstrap**
-- Bootstrap was mainly used for positioning with its grid system to position containers. The card deck component was used to house each recipe.  Bootstrap was also used to create buttons, dropdowns and navbar.
+- Bootstrap was mainly used for positioning with its grid system to position containers. The card deck component was used to house each ingredient.  Bootstrap was also used to create buttons, dropdowns and navbar.
 
 **Javascript**
-- Used for integrating with Stripe
+- Used for integration with Stripe
 
 **JQuery**
 - Used for the navbar colour change on scroll.
@@ -160,12 +160,8 @@ As a user on the website I want the ability to easily find diet friendly recipe 
 **Heroku**
 - Used in the deployment of this application.
 
-**Ratings Widget**
-- JS widget used for the star rating of each recipe.
-https://rating-widget.com/
-
 **Font Awesome**
-- Used for icons on the page such as the footer links and search icon.
+- Used for icons on the page such as search icon.
 
 ### **Other resources:**
 
@@ -205,7 +201,7 @@ https://rating-widget.com/
 [![Build Status](https://travis-ci.org/Holly-Horwood/keto_pantry.svg?branch=master)](https://travis-ci.org/Holly-Horwood/keto_pantry)
 
 **Coverage**
--   Coverage was used to indentify any areas that had been missed in my TestCase builds, I could then add any extra tests that were needed.
+-   Coverage was used to identify any areas that had been missed in my TestCase builds, I could then add any extra tests that were needed.
 
 **Lighthouse**
     I also used chromes _Lighthouse_ extension.
@@ -385,8 +381,7 @@ All content written by Holly Horwood.
 
 **Media:**
 
--   Most images were supplied by Pixabay and Flickr
-- All other images supplied by Holly Horwood
+-   Images were supplied by Pixabay and Flickr
 - Favicon was generated using favicon.io
 -   You Tube. JS to change nav colour on scroll - Code courtesy of System 22 I.T. Solutions https://www.youtube.com/watch?v=AM-GT_0Uu5w
 -   Google fonts: Roboto and Montserrat

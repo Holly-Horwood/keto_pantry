@@ -34,6 +34,10 @@ footer.scroll {
     background-color: #fff; 
 }
 
+footer p {
+    color: #706868;
+}
+
 .fa-shopping-cart {
     background-color: #28a745
 }
@@ -79,7 +83,25 @@ footer.scroll {
     padding: 1%;
 }
 
+.cart-container + footer {
+    background-color: #fff
+}
 
+form + footer {
+    background-color: transparent;
+}
+
+.blog-deck + footer {
+    background-color: #fff
+}
+
+.product-row + footer {
+    background-color: #fff;
+}
+
+.checkout-container + footer {
+    background-color: #fff;
+}
 
 /*----------------------------------------------GENERAL*/
 
@@ -165,9 +187,6 @@ a.navbar-brand {
     display: none;
 }
 
-form + footer {
-    background-color: transparent;
-}
 
 /*--------------------------------------PASSWORD RESET*/
 
@@ -205,8 +224,6 @@ form + footer {
 .reset-link {
     font-size: 1.2em;
 }
-
-
 
 /*------------------------------------------------BLOG*/
 
@@ -247,6 +264,7 @@ form + footer {
 .blog-story {
     margin-bottom: 0;
 }
+
 
 /*------------------------------------------------PRODUCTS*/
 
@@ -322,7 +340,6 @@ div.card-deck.product-deck div.card.product-card {
     font-size: 1.5em;
     padding: 10px;
 }
-
 
 
 /*--------------------------------------------CHECKOUT*/
