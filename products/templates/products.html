@@ -18,10 +18,10 @@
                     <p class="product-description">{{ product.description }}</p>
                     <p class="product-price">$ {{ product.price }} NZD</p>
 
-                    <form id="productAdd" name="addQty" method="post" action="{% url 'add_to_cart' product.id %}">
+                    <form name="addQty" method="post" action="{% url 'add_to_cart' product.id %}">
                         {% csrf_token %}
                         <div class="input-product-group">
-                            <input class="product-qty" name="quantity" type="number" min="1" max="999" class="form-control required"
+                            <input class="product-qty" id="quantity" name="quantity" type="number" min="1" max="999" class="form-control"
                                 placeholder="Quantity">
                             <span class="input-group-btn">
                                 <button class="btn btn-success btn-sm" type="submit" va>Add</button>

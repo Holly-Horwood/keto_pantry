@@ -56,7 +56,10 @@ def adjust_cart(request, cart_line_item_id):
                 cart_line_item = CartLineItem.objects.get(
                     id = cart_line_item_id
                     )
-                if quantity > 0:        
+                if quantity is None:
+                    cart_line_item.quantity=1
+                    cart_line_item.save()    
+                elif quantity > 0:        
                     cart_line_item.quantity=quantity
                     cart_line_item.save()
                 else:
