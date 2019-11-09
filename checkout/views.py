@@ -45,6 +45,12 @@ def checkout(request):
                     line_total = cart_line_item.quantity * product.price
                     product_count += cart_line_item.quantity
                     cart_items.append({'id': cart_line_item.id, 'quantity': cart_line_item.quantity, 'product': product, 'line_total': line_total})
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        product=product,
+                        quantity=product_count
+                    )
+                    order_line_item.save()
             
             try:
                 customer = stripe.Charge.create(

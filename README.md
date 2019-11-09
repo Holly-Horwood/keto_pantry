@@ -61,12 +61,12 @@ The home/index page shows a navbar at the top of the screen with links to all pa
 -   Shop
 -   Cart
 
-As the site is used and items are added to the cart a fontawesome cart icon will show next to cart and display the number of items currently in the cart.
+Unregistered users are able to view the blog page only, in order to shop a user must first register and login, this is by design so that all users are encouraged to log in to have full access. As the site is used and items are added to the cart a fontawesome cart icon will show next to cart and display the number of items currently in the cart.
 The entire container is taken up by a background image and a banner has been added with a 'start shopping' button to encourage users to click and go straight to the shop/products page.  A simple footer is at the bottom of each page with copyright info.
 
 **Authentication Pages**
 
-When visiting the site initially the navbar on the home screen shows two authentcation options _Register_ and _Login_.  Users can opt to go to the registration page where they can fill out their user, contact information and create a password.  User that are already registered can simply click on the _Login_ menu option and enter their crudentials to login.  Once a user is logged in the menu will change now only showing the option to _Log Out_.  If the logged in users is an _administrator_ of the site they will also have an _Admin_ option on the navbar to access the backend so that they are able to update the website.  Any time a user logs in or out a message will appear on the screen to confirm the action.  Only logged in users will have the ability to shop on the site.
+When visiting the site initially the navbar on the home screen shows two authentcation options _Register_ and _Login_.  Users can opt to go to the registration page where they can fill out their user, contact information and create a password.  User that are already registered can simply click on the _Login_ menu option and enter their crudentials to login.  Once a user is logged in the menu will change now only showing the option to _Log Out_.  If the logged in users is an _administrator_ of the site they will also have an _Admin_ tab on the navbar to access the backend so that they are able to update the website.  Any time a user logs in or out a message will appear on the screen to confirm the action.  Only logged in users will have the ability to shop on the site.
 
 **Blog Page**
 
@@ -83,7 +83,7 @@ The cart page shows the users a list 6 columns wide including, image, product na
 
 **Checkout Page**
 
-All products selected for purchase are shown first or on the right on smaller screens as bootstrap cards so that the user can easily see what they are buying.  There is a form that the user must fill out with their details including credit card information to be proceesed.  Once complete the user can click on submit payment which will then redirect them to a confirmation page. 
+All products selected for purchase are shown first or on the right on smaller screens as bootstrap cards so that the user can easily see what they are buying.  There is a form that the user must fill out with their details including credit card information to be proceesed.  Once complete the user can click on submit payment which will then redirect them and show a confirmation message that the purchase was successful.  The order line items are saved in the admin section so that packers would then be able to see what was ordered and gather all items for delivery, the cart after checkout is emptied and a new cart is created so that the user is then able to continue shopping if they wish or shop with a new cart next time they log in. 
 
 
 ### **_Skeleton_**
@@ -120,7 +120,7 @@ As a user on the website I want the ability to easily find diet friendly recipe 
 ## **Technologies Used**
 
 **HTML & HTML5**
-- HyperText Markup Language was used to create the structure        and layout of the index.html document. 
+- HyperText Markup Language was used to create the structure and layout of the index.html document. 
   
 **CSS & CSS3**
 - Used to add style to the web page.
@@ -136,6 +136,12 @@ As a user on the website I want the ability to easily find diet friendly recipe 
 
 **Python**
 -   Python was used to implement the logic of this project.
+
+**SQLite3**
+-   Was used as the database during local development.
+
+**Postgres**
+-   Was used as the database once deployed to Heroku.
 
 **Pillow**
 -   Used to view images in Django.
@@ -278,6 +284,8 @@ Passed. No issues were found when used on Edge.
 
 - Due to issues with my own email service provider I was unable to get real email responses to work on the site for authentication purposes.  I have however setup *email backend* in the *settings.py* file for testing.
 
+- It was noticed that the orders had at some point stopped storing the order history in *Admin* this was a case of some code that wasn't replaced after some changes and was quickly rectified.
+
 ---
 
 ## **Future Updates**
@@ -289,6 +297,8 @@ Passed. No issues were found when used on Edge.
 - Shopper product review section.
 
 - Add email configuration for authentication email replies.
+
+-   Add a more customized checkout page with more information about delivery etc.
 
 ---
 
@@ -381,7 +391,7 @@ All content written by Holly Horwood.
 
 **Media:**
 
--   Images were supplied by Pixabay and Flickr
+-   Images were supplied by Pixabay, Upsplash and Flickr
 - Favicon was generated using favicon.io
 -   You Tube. JS to change nav colour on scroll - Code courtesy of System 22 I.T. Solutions https://www.youtube.com/watch?v=AM-GT_0Uu5w
 -   Google fonts: Roboto and Montserrat
@@ -389,12 +399,12 @@ All content written by Holly Horwood.
 
 **Acknowledgements:**
 
-Thanks to Sebastian Immel my mentor for all of his help and patience.  Thanks also to the students and staff at Code Institute especially my tutors Sebastian and Dick.
+Thanks to Sebastian Immel my mentor for all of his help and patience.  Thanks also to the students and staff at Code Institute especially my tutor Dick Vlaanderen.
 
 
 
 
 
-Star ratings app from rating widget https://rating-widget.com/get/rating/javascript/#editor
+
 
 
