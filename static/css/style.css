@@ -92,7 +92,7 @@ form + footer {
 }
 
 .blog-deck + footer {
-    background-color: #fff
+    background-color: #fff;
 }
 
 .product-row + footer {

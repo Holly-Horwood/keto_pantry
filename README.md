@@ -207,7 +207,7 @@ As a user on the website I want the ability to easily find diet friendly recipe 
 [![Build Status](https://travis-ci.org/Holly-Horwood/keto_pantry.svg?branch=master)](https://travis-ci.org/Holly-Horwood/keto_pantry)
 
 **Coverage**
--   Coverage was used to identify any areas that had been missed in my TestCase builds, I could then add any extra tests that were needed.
+-   Coverage was used to identify any areas that had been missed in my TestCase builds, I could then add any extra tests that were needed.  With the time I had left to finish this project I managed to acheive 70% overall coverage, at a later date I will add more testing to improve on this.
 
 **Lighthouse**
     I also used chromes _Lighthouse_ extension.
@@ -222,7 +222,7 @@ The highest possible score is 100%
 ### **Manual Testing**
 
 **Implementation:** 
- Users clicked on all buttons and links and interacted with each page in all possible variations, users also changed screen sizes throughout the process to make sure the site was responsive.
+ Users clicked on all buttons and links and interacted with each page in all possible variations, users also changed screen sizes throughout the process to make sure the site was responsive from as small as 375px.
 
 **Results:** 
  All buttons and links behaved as expected, and site overall worked as intended.
@@ -292,6 +292,8 @@ Passed. No issues were found when used on Edge.
 
 - An additional view to showcase categories making finding items easier.
 
+-   With more time I would add a profile section so that the cutomer can also look back at their order history, at the moment the order history is saved in the backend so there is a record which can be viewed for the purpose of packing and dispatching the orders.
+
 - More options for the Keyword search bar.
 
 - Shopper product review section.
@@ -299,6 +301,8 @@ Passed. No issues were found when used on Edge.
 - Add email configuration for authentication email replies.
 
 -   Add a more customized checkout page with more information about delivery etc.
+
+-   Style Django messages so that they don't push all other content down when they are displayed.
 
 ---
 

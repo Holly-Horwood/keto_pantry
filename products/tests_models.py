@@ -11,9 +11,9 @@ class ProductModelTests(TestCase):
         self.client.login(username='AutoTester', password='test12345')
     
     def what_is_in_the_product_class_test(self):
-        product = Product.objects.create(name=self.name,
-                                            price='12.50')
+        product = Product.objects.create(name=self.name, description='test', price='12.50')
 
         self.assertEqual(product.name, self.name)
+        self.assertEqual(product.desciption, 'test')
         self.assertEqual(product.price, '12.50')
         
