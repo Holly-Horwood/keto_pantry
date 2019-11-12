@@ -15,7 +15,7 @@
     <!--FAVICON-->
     <link rel="shortcut icon" type="image/png" href="{% static 'media/images/favicon.png' %}" />
     <!--CSS STYLESHEET-->
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!--BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
@@ -56,9 +56,7 @@
                     <li><a class="nav-item" href="{% url 'get_posts' %}">Blog</a></li>
                     <!--available to everyone all the time-->
                     <li><a class="nav-item" href="{% url 'products' %}">Shop</a></li>
-                    <li>
-                        <a class="nav-item" href="{% url 'view_cart' %}">
-                            <i></i>Cart
+                    <li><a class="nav-item" href="{% url 'view_cart' %}">Cart
                             {% if product_count > 0 %}
                             <label class="badge badge-success"><i class="fas fa-shopping-cart"></i> {{ product_count }}</label>
                             {% endif %}
@@ -77,6 +75,8 @@
             </div>    
         </nav>
         <!--NAVBAR END-->
+
+        <!--ALERT MESSAGE-->
         {% if messages %}
         <div class="alert alert-success">
             <div class="messages">
