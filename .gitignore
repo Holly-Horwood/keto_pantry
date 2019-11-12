@@ -6,3 +6,4 @@ stripe_key.py
 htmlcov
 *.py[cod]
 __pycache__/
+.env
