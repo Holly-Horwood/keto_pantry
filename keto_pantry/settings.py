@@ -142,7 +142,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 
 AWS_STORAGE_BUCKET_NAME = "ketopantry"
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 AWS_S3_HOST = 's3-ap-southeast-2.amazonaws.com'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
@@ -152,6 +152,7 @@ STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 MEDIAFILES_LOCATION = 'media'
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # AWS_STORAGE_BUCKET_NAME = 'ketopantry'
 # AWS_S3_REGION_NAME = 'ap-southeast-2'
@@ -173,7 +174,7 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 # MEDIAFILES_LOCATION = 'media'
 # DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # MEDIA_URL = '/media/'
 # MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, 'media')
 
