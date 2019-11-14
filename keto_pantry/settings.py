@@ -26,14 +26,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-# if os.path.exists(".env"):
-#     from dotenv import load_dotenv
-#     load_dotenv()
-#     DEBUG = True
-# else:
-#     DEBUG = False
-#     STATICFILES_STORAGE = "custom_storages.StaticStorage"
+DEBUG = True
+if os.path.exists(".env"):
+    from dotenv import load_dotenv
+    load_dotenv()
+    DEBUG = True
+else:
+    DEBUG = True
+    STATICFILES_STORAGE = "custom_storages.StaticStorage"
 
 ALLOWED_HOSTS = ['keto-pantry.herokuapp.com', '127.0.0.1']
 
@@ -173,7 +173,7 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 # MEDIAFILES_LOCATION = 'media'
 # DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # MEDIA_URL = '/media/'
 # MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, 'media')
 
