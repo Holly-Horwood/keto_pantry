@@ -30,7 +30,7 @@ This website was designed for educational purposes only for the Code Institute. 
 	
 
 ## **Motivation/Purpose**
-This is my fourth milestone project for the Full Stack Software Development course through Code Institute.  I decided to create this website which in the future I plan to link with my previous project [Keto Kitchen](https://keto-pantry.herokuapp.com).  I focused both sites on a Keto/Low Carb lifestyle which is essential for good health among Type 1 diabetics like myself. People with this condition often struggle to find diet appropriate food in this modern world of processed and sugary products, so I have created this site as an easy way for people to find the items they need to make healthy food choices.  In the future when the two sites are blended I hope to make this a business for myself helping those following this lifestyle to easily find the information and resources they need.
+This is my fourth milestone project for the Full Stack Software Development course through Code Institute.  I decided to create this website which in the future I plan to link with my previous project [Keto Kitchen](https://keto-pantry.herokuapp.com).  I focused both sites on a Keto/Low Carb lifestyle which is essential for good health among Type 1 diabetics like myself. People with this condition often struggle to find diet appropriate food in this modern world of processed and sugary products, so I have created this site as an easy way for people to find the items they need to make healthy food choices.  In the future when the two sites are blended, I hope to make this a business for myself helping those following this lifestyle to easily find the information and resources they need.
 
 ---
 
@@ -42,7 +42,7 @@ This is my fourth milestone project for the Full Stack Software Development cour
 
  Keto and Low Carb are very similar, the main difference is the amount of carbs allowed daily, those eating Low Carb (Low Carbohydrate) will consume usually between 50gm to 100gm of carbs per day whereas a Keto (Ketogenic) diet is stricter, limiting the daily intake to less than 50gm per day to maintain a state of ketosis in the body. 
  
- I consider myself quite knowledgeable in this area as I have lived the low carb lifestyle for many years now. I also created my own low carb Facebook page for diabetics in New Zealand that at the time of writing this has over 1600 members and continues to grow almost daily.  Via my Facebook page I am able to discuss, learn, teach and share ideas, the page was a great inspiration for this project. I intend to eventually extend on this site to include restaurant recommendation for people looking for places to eat the offer low carb friendly options.  My Facebook page alone has already changed so many lives for the better and I see this project as the start of another venture that will continue to help make diabetics lives easier and improve their health along the way.
+ I consider myself quite knowledgeable in this area as I have lived the low carb lifestyle for many years now. I also created my own low carb Facebook page for diabetics in New Zealand that at the time of writing this has over 1600 members and continues to grow almost daily.  Via my Facebook page I am able to discuss, learn, teach and share ideas, the page was a great inspiration for this project. I intend to eventually extend on this site to include restaurant recommendation for people looking for places to eat that offer low carb friendly options.  My Facebook page alone has already changed so many lives for the better and I see this project as the start of another venture that will continue to help make diabetics lives easier and improve their health along the way.
 
 **Audience:** 
 
@@ -54,19 +54,19 @@ This is my fourth milestone project for the Full Stack Software Development cour
 
 **Home Page**
 
-The home/index page shows a navbar at the top of the screen with links to all pages plus a keyword search bar, on the far left is the websites name "Keto Pantry".  The navbar contains the following items when intially visited:
+The home/index page shows a navbar at the top of the screen with links to all pages plus a keyword search bar, on the far left is the websites name "Keto Pantry".  The navbar contains the following items when initially visited:
 -   Register
 -   Login
 -   Blog
 -   Shop
 -   Cart
 
-Unregistered users are able to view the blog page only, in order to shop a user must first register and login, this is by design so that all users are encouraged to log in to have full access. As the site is used and items are added to the cart a fontawesome cart icon will show next to cart and display the number of items currently in the cart.
+Unregistered users are able to view the blog page only, in order to shop a user must first register and login, this is by design so that all users are encouraged to register in order to have full access. As the site is used and items are added to the cart a fontawesome shopping cart icon will show next to cart nav item and display the number of items currently in the cart.
 The entire container is taken up by a background image and a banner has been added with a 'start shopping' button to encourage users to click and go straight to the shop/products page.  A simple footer is at the bottom of each page with copyright info.
 
 **Authentication Pages**
 
-When visiting the site initially the navbar on the home screen shows two authentcation options _Register_ and _Login_.  Users can opt to go to the registration page where they can fill out their user, contact information and create a password.  User that are already registered can simply click on the _Login_ menu option and enter their crudentials to login.  Once a user is logged in the menu will change now only showing the option to _Log Out_.  If the logged in users is an _administrator_ of the site they will also have an _Admin_ tab on the navbar to access the backend so that they are able to update the website.  Any time a user logs in or out a message will appear on the screen to confirm the action.  Only logged in users will have the ability to shop on the site.
+When visiting the site initially the navbar on the home screen shows two authentication options _Register_ and _Login_.  Users can opt to go to the registration page where they can fill out their user, contact information and create a password.  User that are already registered can simply click on the _Login_ menu option and enter their credentials to login.  Once a user is logged in the menu will change now only showing the option to _Log Out_.  If the logged in users is an _administrator_ of the site they will also have an _Admin_ tab on the navbar to access the backend so that they are able to update the website.  Any time a user logs in or out a message will appear on the screen to confirm the action.  Only logged in users will have the ability to shop on the site.
 
 **Blog Page**
 
@@ -79,11 +79,11 @@ User must be logged on to access the shop page, if they are not logged in the si
 
 **Cart Page**
 
-The cart page shows the users a list 6 columns wide including, image, product name, unit price, quantity, line price, remove.  Any products the user has added to their cart will be dispalyed and at the bottom the total price is shown as well as a _proceed to checkout_ button.  In the cart area the user is able to increase or decrease the amount of any product or delete them from the cart entirely. Once the user is happy with their order they can click _proceed to checkout_ to purchase.
+The cart page shows the users a list 6 columns wide including, image, product name, unit price, quantity, line price, remove.  Any products the user has added to their cart will be displayed and at the bottom the total price is shown as well as a _proceed to checkout_ button.  In the cart area the user is able to increase or decrease the amount of any product or delete them from the cart entirely. Once the user is happy with their order they can click _proceed to checkout_ to purchase.
 
 **Checkout Page**
 
-All products selected for purchase are shown first or on the right on smaller screens as bootstrap cards so that the user can easily see what they are buying.  There is a form that the user must fill out with their details including credit card information to be proceesed.  Once complete the user can click on submit payment which will then redirect them and show a confirmation message that the purchase was successful.  The order line items are saved in the admin section so that packers would then be able to see what was ordered and gather all items for delivery, the cart after checkout is emptied and a new cart is created so that the user is then able to continue shopping if they wish or shop with a new cart next time they log in. 
+All products selected for purchase are shown first or on the right on smaller screens as bootstrap cards so that the user can easily see what they are buying.  There is a form that the user must fill out with their details including credit card information to be processed.  Once complete the user can click on submit payment which will then redirect them and show a confirmation message that the purchase was successful.  The order line items are saved in the admin section so that packers would then be able to see what was ordered and gather all items for delivery, the cart after checkout is emptied and a new cart is created so that the user is then able to continue shopping if they wish or shop with a new cart next time they log in. 
 
 
 ### **_Skeleton_**
@@ -100,20 +100,20 @@ Created using [Balsamiq](https://balsamiq.com/) only the main wireframes are sho
 
 ### **_Surface_** 
 
-I designed this site using modern neutral colours.  Different variations of green are used throughout the site to represent healthy living.  There is a logo and favicon for easy identification of the site.  The navbar is transparent however on scroll it becomes white otherwise the user may get frustrated if they try to click on anything behind the navbar as it wont work.  The bootstrap card deck was used to make it easy to identify individual recipes and where applicable the search container is at the top of the screen so the user can easily search the site.
+I designed this site using modern neutral colours.  Different variations of green are used throughout the site to represent healthy living.  There is a logo and favicon for easy identification of the site.  The navbar is transparent however on scroll it becomes white otherwise the user may get frustrated if they try to click on anything behind the navbar as it won't work.  The bootstrap card deck was used to make it easy to identify individual recipes and where applicable the search container is at the top of the screen so the user can easily search the site.
 
 ---
 
 
 ## **User Story**
 
-As a user on the website I want the ability to easily find diet friendly recipe ingrediants and food. 
+As a user on the website I want the ability to easily find diet friendly recipe ingredients and food. 
 
-**End user goal:** Find an ingrediant or food. 
+**End user goal:** Find an ingredient or food. 
 
 **End business goal:** Make finding health conscious supplies easier.
 
-**Acceptance criteria:** Able to search the site for ingrediants or food and purchase chosen items.
+**Acceptance criteria:** Able to search the site for ingredients or food and purchase chosen items.
 
 ---
 
@@ -160,7 +160,7 @@ As a user on the website I want the ability to easily find diet friendly recipe 
 -   Travis was used for continuous integration testing.
 
 **PEP8**
-- Used as a guide for correct and consistant Python formating.
+- Used as a guide for correct and consistent Python formatting.
 
 
 **Heroku**
@@ -207,7 +207,7 @@ As a user on the website I want the ability to easily find diet friendly recipe 
 [![Build Status](https://travis-ci.org/Holly-Horwood/keto_pantry.svg?branch=master)](https://travis-ci.org/Holly-Horwood/keto_pantry)
 
 **Coverage**
--   Coverage was used to identify any areas that had been missed in my TestCase builds, I could then add any extra tests that were needed.  With the time I had left to finish this project I managed to acheive 70% overall coverage, at a later date I will add more testing to improve on this.
+-   Coverage was used to identify any areas that had been missed in my TestCase builds, I could then add any extra tests that were needed.  With the time I had left to finish this project I managed to achieve 70% overall coverage, at a later date I will add more testing to improve on this.
 
 **Lighthouse**
     I also used chromes _Lighthouse_ extension.
@@ -249,15 +249,15 @@ Passed. No issues were found when used on Edge.
 
 **Home/Index**
 
-- Any errors found via validators were corrected.  The user clicked on registration and filled out the registration form before logging out and back in again to test that login was also working.  The user also clicked on all navbar tabs to ensure each page loaded as expected and clicked on the 'start shopping' button to check it redirected as intended.  All colour and text is consistant, all all elements are aligned correctly.
+- Any errors found via validators were corrected.  The user clicked on registration and filled out the registration form before logging out and back in again to test that login was also working.  The user also clicked on all navbar tabs to ensure each page loaded as expected and clicked on the 'start shopping' button to check it redirected as intended.  All colour and text is consistent, all elements are aligned correctly.
 
 **Blog**
 
-- Any errors found via validators were corrected.  All blogs display as expected and are responsive changing layout as the viewports size is changed.  Posts are linking correctly with database and displaying the correct text, images and working links.  Each link redirects to a seperate page using `target="_blank"` All colour and text is consistant, all elements are aligned correctly.
+- Any errors found via validators were corrected.  All blogs display as expected and are responsive changing layout as the viewports size is changed.  Posts are linking correctly with database and displaying the correct text, images and working links.  Each link redirects to a separate page using `target="_blank"` All colour and text is consistent, all elements are aligned correctly.
 
 **Shop**
 
--  Any errors found via validators were corrected.  Page was tested for responsiveness and behaved as expected.  Database is connected and all products are displayed with the corrrect information.  Adding a product updated the cart as intended. All colour and text is consistant, all all elements are aligned correctly.
+-  Any errors found via validators were corrected.  Page was tested for responsiveness and behaved as expected.  Database is connected and all products are displayed with the correct information.  Adding a product updated the cart as intended. All colour and text is consistent, all elements are aligned correctly.
 
 **Cart**
 
@@ -265,7 +265,7 @@ Passed. No issues were found when used on Edge.
 
 **Checkout**
 
-- Any errors found via validators were corrected. Page was tested for responsiveness and behaved as expected.  The summary was viewed and showed the expected summary and breakdown of each line item and correct total.  The form was filled out using a dummy credit card number to ensure the Stripe payment was processed.  The database was then checked and all cart line items were deleted as expected and the stripe developers website showed that the payment had gone through successfully. All colour and text is consistant, all all elements are aligned correctly.
+- Any errors found via validators were corrected. Page was tested for responsiveness and behaved as expected.  The summary was viewed and showed the expected summary and breakdown of each line item and correct total.  The form was filled out using a dummy credit card number to ensure the Stripe payment was processed.  The database was then checked and all cart line items were deleted as expected and the stripe developers website showed that the payment had gone through successfully. All colour and text is consistent, all elements are aligned correctly.
 
 #### **External Testing**
 
@@ -292,7 +292,7 @@ Passed. No issues were found when used on Edge.
 
 - An additional view to showcase categories making finding items easier.
 
--   With more time I would add a profile section so that the cutomer can also look back at their order history, at the moment the order history is saved in the backend so there is a record which can be viewed for the purpose of packing and dispatching the orders.
+-   With more time I would add a profile section so that the customer can also look back at their order history, at the moment the order history is saved in the backend so there is a record which can be viewed for the purpose of packing and dispatching the orders.
 
 - More options for the Keyword search bar.
 
@@ -376,7 +376,7 @@ else:
 <br>
 -   Re-build the migrations and create a superuser for your postgres database.
 <br>
--   Go to [Amazon AWS](https://aws.amazon.com/) to create an account so that you can host your static and media files. You'll nedd to create an S3 Bucket, here's a video to help [S3 Tutorial](https://www.youtube.com/watch?v=9HsEMyKrlnw)
+-   Go to [Amazon AWS](https://aws.amazon.com/) to create an account so that you can host your static and media files. You'll need to create an S3 Bucket, here's a video to help [S3 Tutorial](https://www.youtube.com/watch?v=9HsEMyKrlnw)
 
 - To push your static files to AWS type `python manage.py collectstatic` into your terminal and select *yes* when prompted.
 

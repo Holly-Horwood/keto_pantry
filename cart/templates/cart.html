@@ -32,17 +32,20 @@
                 <td class="text-center align-middle">${{ item.product.price }}</td>
 
                 <td class="align-middle">
-                    <form class="form-inline  justify-content-center" method="POST" action="{% url 'adjust_cart' item.id %}">
+                    <form class="form-inline  justify-content-center" method="POST"
+                        action="{% url 'adjust_cart' item.id %}">
                         {% csrf_token %}
                         <div class="form-group">
                             <label for="exampleInputAmount" class="sr-only">New Qty</label>
                             <div class="input-group">
-                                <input name="quantity" type="number" min="0" max="999" value="{{ item.quantity }}" class="form-control input-group-addon" placeholder="{{ item.quantity }}">
+                                <input name="quantity" type="number" min="0" max="999" value="{{ item.quantity }}"
+                                    class="form-control input-group-addon" placeholder="{{ item.quantity }}">
                             </div>
                         </div>
                         <div>
-                            <button type="submit" class="btn btn-success amend-btn"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
-                        </div>    
+                            <button type="submit" class="btn btn-success amend-btn"><span
+                                    class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
+                        </div>
                     </form>
                 </td>
                 <td class="text-center align-middle">${{ item.line_total }}</td>
