@@ -11,9 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-# import env
 import dj_database_url    
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,15 +25,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-if os.path.exists(".env"):
-    from dotenv import load_dotenv
-    load_dotenv()
-    DEBUG = True
-else:
-    DEBUG = True
-    STATICFILES_STORAGE = "custom_storages.StaticStorage"
 
-ALLOWED_HOSTS = ['keto-pantry.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['keto-pantry.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -89,19 +80,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'keto_pantry.wsgi.application'
 
-
-if "DATABASE_URL" in os.environ:
-    DATABASES = {
-        "default": dj_database_url.parse(os.getenv("DATABASE_URL"))
-    }
-else:
-    print("Postgres URL not found, using sqlite3 instead")
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        }
-    }
+DATABASES = {
+    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -154,7 +135,14 @@ STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 MEDIAFILES_LOCATION = 'media'
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+AWS_DEFAULT_ACL = None
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
