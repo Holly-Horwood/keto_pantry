@@ -5,6 +5,7 @@
 
 {% block content %}
 <!--REGISTRATION PROMPT-->
+<body class="bg-sign-img" style="background-image: url({% static 'media/images/tape_measure.jpg' %})"></body>
 <div class="row d-flex prompt">
     <div class="col-sm-12 registration-prompt">
         <p><a href="{% url 'registration' %}"><strong>Have you registered?</strong></a> You must be registered to login and shop.</p>
@@ -12,7 +13,6 @@
 </div>
 <!--LOGIN FORM-->
 <div class="login-container">
-    <body class="bg-sign-img" style="background-image: url({% static 'media/images/tape_measure.jpg' %})"></body>
     <h2 class="login-title">Login</h2>
     <form class="login-form" method="POST">
         {% csrf_token %}
