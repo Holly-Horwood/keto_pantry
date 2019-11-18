@@ -302,8 +302,6 @@ Passed. No issues were found when used on Edge.
 
 -   Add a more customized checkout page with more information about delivery etc.
 
--   Style Django messages so that they don't push all other content down when they are displayed.
-
 ---
 
 ## **Deployment**
@@ -345,21 +343,21 @@ https://github.com/Holly-Horwood/keto_pantry
 #### **Remote Deployment**
 
 - I created a new app in [Heroku](https://heroku.com) called keto-pantry.
-<br>
+
 -   Create a requirements.txt file
      * `pip3 freeze --local > requirements.txt`
-<br>
+
 - Add a *Procfile* with the following:
 
     *   `web: gunicorn keto_pantry.wsgi:application >Procfile`
     *   `release: python manage.py migrate >Procfile`
-<br>
+
 -   Go to the [Heroku](https://heroku.com) website to sign up. Create your new project by clicking the *New* button. 
-<br>
+
 -   Click on the *Resources* tab and click on *add-ons* and search for *Heroku Postgres*. Select the free Hobby level (this creates a remote database that you will use instead of sqlite3) Back in your IDE you will need to update your env.py file with your new database url.
-<br>
+
 -   In the Heroku *Settings* tab click on *the *Reveal Config Vars* to add your environmental variables. 
-<br>
+
 - Update your IDE settings.py file to connect to the remote database.  For example: 
     *   `import os`
     *   `import dj_database_url`
@@ -373,9 +371,9 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }`
-<br>
+
 -   Re-build the migrations and create a superuser for your postgres database.
-<br>
+
 -   Go to [Amazon AWS](https://aws.amazon.com/) to create an account so that you can host your static and media files. You'll need to create an S3 Bucket, here's a video to help [S3 Tutorial](https://www.youtube.com/watch?v=9HsEMyKrlnw)
 
 - To push your static files to AWS type `python manage.py collectstatic` into your terminal and select *yes* when prompted.
