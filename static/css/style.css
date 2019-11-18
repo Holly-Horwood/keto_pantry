@@ -38,14 +38,6 @@ body {
     color: #575252 !important;
 }
 
-a.sign-in-link, a.reset-link, a.have-you {
-    color: #28a745 !important;
-}
-
-a.sign-in-link, a.reset-link, a.have-you:hover {
-    color: #26743a !important;
-}
-
 footer.scroll {
     background-color: #fff; 
 }
