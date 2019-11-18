@@ -6,7 +6,7 @@
 <body class="bg-sign-img" style="background-image: url({% static 'media/images/tape_measure.jpg' %})"></body>
 <div class="reg-container">
     <h2 class="reg-title"> Register </h2>
-    <p>If you already have an account, you can <a href="{% url 'login' %}">sign in </a></p>
+    <p>If you already have an account, you can <a href="{% url 'login' %}" class="sign-in-link">sign in </a></p>
     <form class="reg-form" method="POST">
         {% csrf_token %} {{ registration_form|as_bootstrap }}
         <button class="reg-btn" type="submit">Register</button>

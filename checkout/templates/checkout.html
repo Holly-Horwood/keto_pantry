@@ -17,7 +17,7 @@
     <div class="checkout-items-row">
         <div class="col-sm-12 checkout-items-col">
             <hr>
-            <legend class="text-center">Summary</legend>
+            <h2 class="text-center">Summary</h2>
             <hr>
             <br>
             {% for item in cart_items %}
@@ -40,7 +40,7 @@
         <div class="col-sm-12 checkout-form">
             <form method="post" id="payment-form" action="{% url 'checkout' %}">
                 <hr>
-                <legend class="text-center">Payment Details</legend>
+                <h2 class="text-center">Payment Details</h2>
                 <hr>
                 <div id="credit-card-errors" style="display: none;">
                     <div id="alert-message block-message error" id="stripe-error-message"></div>

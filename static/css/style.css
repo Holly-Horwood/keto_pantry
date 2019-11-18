@@ -34,16 +34,24 @@ body {
     background-color: #f8f9fab3;
 }
 
+.reg-container, .prompt, .login-container {
+    color: #575252 !important;
+}
+
+a.sign-in-link, a.reset-link, a.have-you {
+    color: #28a745 !important;
+}
+
+a.sign-in-link, a.reset-link, a.have-you {
+    color: #1a5829 !important;
+}
+
 footer.scroll {
     background-color: #fff; 
 }
 
 footer p {
-    color: #706868;
-}
-
-.fa-shopping-cart {
-    background-color: #28a745
+    color: #4b4040;
 }
 
 table.table.table-hover {
@@ -153,7 +161,7 @@ a.navbar-brand {
 /*----------------------------------------------INDEX*/
 
 .bg-img {
-    background: none important!;
+    background: none !important;
 } 
 
 .banner {
