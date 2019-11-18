@@ -139,7 +139,7 @@ body {
 .navbar-collapse {
     text-align: right;
     padding: 1%;
-    margin-left: 50%;
+    margin-left: 70%;
 }
 
 a.navbar-brand {
@@ -180,6 +180,8 @@ a.navbar-brand {
 
 .reg-container {
     margin-top: 15vh;
+    width: 80%;
+    margin-left: 10%;
 } 
 
 .reg-title {

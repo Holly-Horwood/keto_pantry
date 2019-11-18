@@ -302,6 +302,8 @@ Passed. No issues were found when used on Edge.
 
 -   Add a more customized checkout page with more information about delivery etc.
 
+-   On a larger screen when the navbar items change size one of the link temporarily and partially overlaps the background image.  I would like to fine tue this so that doesn't happen.
+
 ---
 
 ## **Deployment**
