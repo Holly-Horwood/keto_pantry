@@ -42,8 +42,8 @@ a.sign-in-link, a.reset-link, a.have-you {
     color: #28a745 !important;
 }
 
-a.sign-in-link, a.reset-link, a.have-you {
-    color: #1a5829 !important;
+a.sign-in-link, a.reset-link, a.have-you:hover {
+    color: #26743a !important;
 }
 
 footer.scroll {
