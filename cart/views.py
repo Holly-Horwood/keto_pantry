@@ -23,7 +23,7 @@ def add_to_cart(request, product_id):
     else:    
         cart[product_id] = cart.get(product_id, quantity)
 
-    request.session['cart'] = cart
+    
     #Persisting cart to database for logged in users
     if request.user.is_authenticated:
         cart_model, created = Cart.objects.get_or_create(
@@ -37,6 +37,9 @@ def add_to_cart(request, product_id):
             )
         cart_line_item.quantity=quantity
         cart_line_item.save()
+
+        cart['id'] = cart_model.id
+        request.session['cart'] = cart
 
     return redirect(reverse('products'))
 

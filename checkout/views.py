@@ -94,4 +94,4 @@ def checkout(request):
         })
     
     return render(request, "checkout.html", {"order_form": order_form, "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})
-    # return {'cart_items': cart_items, 'total': total, 'product_count': product_count}
+
