@@ -10,6 +10,7 @@ from django.forms import model_to_dict
 from accounts.forms import UserLoginForm, UserLoginForm, UserRegistrationForm
 from cart.models import Cart, CartLineItem
 from products.models import Product
+from checkout.models import Order, OrderLineItem
 
 def index(request):
     """Return the index.html file"""
@@ -78,6 +79,11 @@ def registration(request):
         registration_form = UserRegistrationForm()
     return render(request, 'registration.html', {
         "registration_form": registration_form})
+
+def user_profile(request):
+    """User profile page"""
+    user = User.objects.get(email=request.user.email)
+    return render(request, 'profile.html', {"profile": user})    
 
 
 

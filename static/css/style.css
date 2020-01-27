@@ -63,7 +63,7 @@ table.table.table-hover {
     background-color: #fff;
 }
 
-.post-title {
+.post-title, .welcome {
     color: #706868;
 }
 
@@ -228,6 +228,15 @@ a.navbar-brand {
 .reset-link {
     font-size: 1.2em;
 }
+
+/*---------------------------------------------PROFILE*/
+
+.welcome {
+    margin-top: 10vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+}
+
 
 /*------------------------------------------------BLOG*/
 
