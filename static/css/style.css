@@ -135,7 +135,7 @@ body {
 .navbar-collapse {
     text-align: right;
     padding: 1%;
-    margin-left: 70%;
+    margin-left: 50vw;
 }
 
 a.navbar-brand {
@@ -152,11 +152,10 @@ a.navbar-brand {
 } 
 
 .banner {
-    font-family: 'Montserrat', sans-serif;
-    margin-right: 9%;
-    margin-top: 30vh;
+    padding-top: 45vh;
+    width: 70%;
+    margin: auto;
     text-align: center;
-    width: 30%;
 }
 
 .banner-title {
@@ -230,17 +229,24 @@ a.navbar-brand {
 .card-header {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5em;
+}
+
+.card-header:first-child {
     border: none;
 }
 
 .profile-card {
     padding: 5%;
     align-items: center;
-    margin-top: 15vh;
+    margin-top: 20vh;
 }
 
 .profile-table {
     font-size: 20px;
+}
+
+.profile-body {
+    padding-top: 2%;
 }
 
 /*------------------------------------------------BLOG*/
@@ -397,10 +403,6 @@ footer {
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
 
-    body {
-        font-size: 150%;
-    }
-
     .bg-img {
         background-size: cover;
         background-repeat: no-repeat;
@@ -410,8 +412,8 @@ footer {
     }    
     
     .banner {
-        margin-left: 60%;
-        margin-top: 20%;
+        width: 40%;
+        margin-right: 5%;
     }
 
     .cart-media, .cart-media-title {
@@ -437,23 +439,23 @@ footer {
 
 @media (min-width: 999px) { 
 
-    body {
-        font-size: 150%;
-    }
-
     .navbar-collapse {
         margin-left: 0;
         background-color: transparent;
         margin-right: 10px;
     }
 
+    .nav-item {
+        font-size: 1.2em;
+    }
+
     .banner-title {
-        font-size: 3em;
+        font-size: 2em;
     }
 
     .banner {
-        padding-top: 13%;
-        margin-left: 60%;
+        margin-right: 5%;
+        padding-top: 50vh;
     }
     
     .blogpost-row {
@@ -480,8 +482,10 @@ footer {
     }
 
     .banner {
-        padding-top: 10%;
-        margin-left: 58%;
+        font-family: 'Montserrat', sans-serif;
+        margin-right: 9%;
+        text-align: center;
+        width: 30%;
     }
 
  }  

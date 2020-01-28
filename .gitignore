@@ -7,3 +7,5 @@ htmlcov
 *.py[cod]
 __pycache__/
 .env
+.vscode
+env
