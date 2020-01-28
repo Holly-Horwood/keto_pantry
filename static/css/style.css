@@ -22,7 +22,7 @@ body {
     color: #706868;
 }
 
-.navbar-light a.navbar-brand, .cart-title   {
+.navbar-light a.navbar-brand, .cart-title, .banner   {
     color: #706868;
 }
 
@@ -48,10 +48,6 @@ footer p {
 
 table.table.table-hover {
     color: #706868;
-}
-
-.banner {
-    color: #fff;
 }
 
 .btn .btn-light {
@@ -159,8 +155,8 @@ a.navbar-brand {
     font-family: 'Montserrat', sans-serif;
     margin-right: 9%;
     margin-top: 30vh;
-    padding-top: 22%;
     text-align: center;
+    width: 30%;
 }
 
 .banner-title {
