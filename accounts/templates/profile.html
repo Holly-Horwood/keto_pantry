@@ -17,27 +17,29 @@
 
 {% block content %}
 
-<h2 class="text-center mb-4 welcome"><u>Welcome {{ user }}</u></h2>
-    <div class="profile-card center">
-        <div class="profile-card-inner " style="max-width: 100%;">
-            <div class="card-body center">
-                <table class='center inline'>
-                    <tr>
-                        <td>Username: </td>
-                        <td>{{ profile }}</td>
-                    </tr>
-                    <tr>
-                        <td>Email: </td>
-                        <td>{{ profile.email}}</td>
-                    </tr>
-                </table>
-                <a class="btn btn-danger" href="{% url 'password_reset' %}">Change your password</a>
+
+<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 mx-auto">
+    <div class="card profile-card border-secondary mb-3">
+        <div class="card-header w-100 text-center">Welcome {{ user }}</div>
+        <div class="profile-body h-100 text-secondary">
+            <table class='profile-table'>
+                <tr>
+                    <td>Username:&nbsp&nbsp;</td>
+                    <td>{{ profile }}</td>
+                </tr>
+                <tr>
+                    <td>Email:&#09; &nbsp;</td>
+                    <td>{{ profile.email}}</td>
+                </tr>
+            </table>
+            <hr>
+            <a class="btn btn-danger text-center" href="{% url 'password_reset' %}">Change Your Password</a> 
+            <hr>        
+            <div class="mt-4">
+                <a class="btn btn-success" href="{% url 'index' %}">Return to Home Page</a>
             </div>
         </div>
-    </div>
-    <div class="text-center mt-4">
-        <a class="btn btn-success" href="{% url 'index' %}">Return to Home Page</a>
-    </div>
+    </div>            
 </div>
 
 {% endblock %}

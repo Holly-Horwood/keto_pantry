@@ -63,7 +63,7 @@ table.table.table-hover {
     background-color: #fff;
 }
 
-.post-title, .welcome {
+.post-title, .card-header {
     color: #706868;
 }
 
@@ -231,10 +231,20 @@ a.navbar-brand {
 
 /*---------------------------------------------PROFILE*/
 
-.welcome {
-    margin-top: 10vh;
+.card-header {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5em;
+    border: none;
+}
+
+.profile-card {
+    padding: 5%;
+    align-items: center;
+    margin-top: 15vh;
+}
+
+.profile-table {
+    font-size: 20px;
 }
 
 /*------------------------------------------------BLOG*/
