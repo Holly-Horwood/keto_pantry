@@ -8,11 +8,11 @@ from .models import Cart, CartLineItem
 from products.models import Product
 
 # Create your views here.
-# Renders the cart content page
+"""Renders the cart content page"""
 def view_cart(request):
     return render(request, "cart.html")
 
-# Add quantity of product to cart
+"""Add quantity of product to cart"""
 def add_to_cart(request, product_id):
     quantity = int(request.POST.get('quantity'))
 
@@ -24,13 +24,13 @@ def add_to_cart(request, product_id):
         cart[product_id] = cart.get(product_id, quantity)
 
     
-    #Persisting cart to database for logged in users
+    """Persisting cart to database for logged in users"""
     if request.user.is_authenticated:
         cart_model, created = Cart.objects.get_or_create(
             user = User(id=request.user.id)
         )
         
-        #Finds the matching product if none adds, updates quantity and saves to database
+        """Finds the matching product if none adds, updates quantity and saves to database"""
         cart_line_item, created = CartLineItem.objects.get_or_create(
             cart = Cart(id=cart_model.id),
             product = Product(id=product_id)
@@ -43,7 +43,7 @@ def add_to_cart(request, product_id):
 
     return redirect(reverse('products'))
 
-# Adjust quantity of product in cart
+"""Adjust quantity of product in cart"""
 def adjust_cart(request, cart_line_item_id):
 
     if request.POST.get('quantity').isdigit():
@@ -51,11 +51,11 @@ def adjust_cart(request, cart_line_item_id):
         quantity = int(request.POST.get('quantity'))
         cart = request.session.get('cart', {})
 
-        #Persisting cart to database for logged in users
+        """Persisting cart to database for logged in users"""
         if request.user.is_authenticated:
             
             try:
-                #Finds the cart line item to be adjusted using the cart line item id, updates quantity and saves to database
+                """Finds the cart line item to be adjusted using the cart line item id, updates quantity and saves to database"""
                 cart_line_item = CartLineItem.objects.get(
                     id = cart_line_item_id
                     )  

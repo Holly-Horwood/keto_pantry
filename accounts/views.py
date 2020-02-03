@@ -36,16 +36,16 @@ def login(request):
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully logged in!")
 
-                # Check if user has a cart, create it if necessary
+                """Check if user has a cart, create it if necessary"""
                 try:
-                    cart_get = Cart.objects.get(    # Gets an existing cart
+                    cart_get = Cart.objects.get(    """Gets an existing cart"""
                         user=user)                      
                     for cartLineItem in cart_get.cartlineitem_set.all():
                         print(cartLineItem)
                     
                 except Cart.DoesNotExist:
                     cart_get = Cart(user=user)
-                    cart_get.save()             # Create a new Cart
+                    cart_get.save()             """Create a new Cart"""
                 request.session['cart'] = model_to_dict(cart_get)
                     
                 return redirect(reverse('index')) 
