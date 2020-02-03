@@ -46,6 +46,9 @@ footer p {
     color: #4b4040;
 }
 
+.social-links i {
+    color: #4b4040;
+
 table.table.table-hover {
     color: #706868;
 }
@@ -298,7 +301,7 @@ a.navbar-brand {
     margin-top: 15vh;
 }
 
-.product-row:last-of-type {
+.product-card:last-of-type {
     margin-bottom: 10vh;
 }
 
@@ -395,6 +398,11 @@ footer {
     padding-top: 1%;
 }
 
+.social-links {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    margin-top: 1%;
+}
 
 /*-------------------MEDIA----------------------------*/
 
