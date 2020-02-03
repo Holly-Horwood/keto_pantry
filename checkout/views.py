@@ -69,17 +69,17 @@ def checkout(request):
                 request.session['cart'] = {}
                 if request.user.is_authenticated:
                     try:
-                        cart_model = Cart.objects.get(                  """trys to get cart by user id if it exists"""
+                        cart_model = Cart.objects.get(                  #trys to get cart by user id if it exists
                             user = User(id=request.user.id)
                         )
-                        cart_model.delete()                             """if cart exists it will delete it""" 
+                        cart_model.delete()                             #if cart exists it will delete it 
                         
                         cart_get = Cart(user=request.user)
-                        cart_get.save()                                 """creates a new cart"""
+                        cart_get.save()                                 #creates a new cart
                         request.session['cart'] = model_to_dict(cart_get)  
                                                    
                     except Cart.DoesNotExist:
-                        cart_model = None                               """if cart doesn't exist does nothing"""    
+                        cart_model = None                               #if cart doesn't exist does nothing 
                 
                 return redirect(reverse('products'))
             else:
