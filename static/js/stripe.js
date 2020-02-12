@@ -13,7 +13,7 @@ $(function() {
         $("#credit-card-errors").hide();
         $("#id_stripe_id").val(response.id);
 
-        //Prevents CC details from being submitted to our server
+        //Prevents CC details from being submitted to the stripe server
         $("#id_credit_card_number").removeAttr("name");
         $("#id_cvv").removeAttr("name");
         $("#id_expiry_month").removeAttr("name");
