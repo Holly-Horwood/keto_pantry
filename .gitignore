@@ -1,6 +1,5 @@
 env.py
 *.png
-static/
 media/
 stripe_key.py
 htmlcov
