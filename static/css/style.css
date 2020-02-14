@@ -48,7 +48,11 @@ footer p {
 
 .social-links i {
     color: #4b4040;
-}        
+} 
+
+.social-links i:hover {
+    color: #706868;
+}
 
 table.table.table-hover {
     color: #706868;
@@ -106,6 +110,7 @@ form + footer {
 .checkout-container + footer {
     background-color: #fff;
 }
+
 
 /*----------------------------------------------GENERAL*/
 
@@ -396,13 +401,12 @@ footer {
     position: fixed;
     z-index: 2;
     font-size: 1.2em;
-    padding-top: 1%;
+    padding-top: 0.5%;
 }
 
 .social-links {
     font-size: 1.5rem;
     margin-bottom: 0;
-    margin-top: 1%;
 }
 
 /*-------------------MEDIA----------------------------*/
