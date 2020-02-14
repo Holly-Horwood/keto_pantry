@@ -111,6 +111,12 @@ form + footer {
     background-color: #fff;
 }
 
+.alert-success {
+    color: #f8f9fa;
+    background-color: #28a745;
+    border-color: #28a745;
+}    
+
 
 /*----------------------------------------------GENERAL*/
 
@@ -126,6 +132,9 @@ body {
     right: 0;
     z-index: 7000;
     padding: 10px;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 2%;
 }
 
 /*----------------------------------------------NAVBAR*/
