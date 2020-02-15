@@ -1,8 +1,106 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
 {% load static from staticfiles %}
-{% block page_title %}{{ user }}'s Profile{% endblock %} 
-{% block page_heading %}{{ user }}'s Profile{% endblock %}
+{% block page_title %}{{ user }}'s Order History{% endblock %}
+{% block page_heading %}{{ user }}'s Order History{% endblock %}
 {% block messages %}
+<!--DELIVERY ADDRESS FOR ORDER-->
+<div class="container">
+    <h2 class="text-center mt-4 mb-4">Welcome {{ user }}</h2>
+    <p><b>Email:</b> {{ user.email }}</p>
+    <p><b>Username:</b> {{ user }}</p>
+    <a class="btn btn-danger" href="{% url 'password_reset' %}">Change your password</a>
+    <br>
+    <br>
+    <hr>
 
+    {% for order in orders %}
+
+    <h3>Your Order will be sent to:</h3>
+    <p><b>Date Ordered:</b> {{ order.date }}</p>
+    <p><b>Order ID:</b> {{ order.id }}</p>
+    <p><b>Name:</b> {{ order.full_name }}</p>
+    <p><b>Phone number:</b> {{ order.phone_number }}</p>
+    <p><b>Country:</b> {{ order.country }}</p>
+    <p><b>Postcode:</b> {{ order.postcode }}</p>
+    <p><b>Town or city:</b> {{ order.town_or_city }}</p>
+    <p><b>Address 1:</b> {{ order.street_address1 }}</p>
+    <p><b>Address 2:</b> {{ order.street_address2 }}</p>
+    <p><b>Region:</b> {{ order.region }}</p>
+</div>
+
+<!--CART CONTAINER-->
+<div class="container cart-container">
+    <!--CART TITLE-->
+    <div class="cart-title mt-3">
+        <h2>Your Cart</h2>
+    </div>
+    <!--CART COLUMN HEADERS-->
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col" class="cart-media-title text-center">Image</th>
+                <th scope="col" class="text-center">Product</th>
+                <th scope="col" class="text-center">Unit Price</th>
+                <th scope="col" class="text-center">Quantity</th>
+                <th scope="col" class="text-center">Price</th>
+                <th scope="col" class="text-center">Remove</th>
+            </tr>
+        </thead>
+        <!--CART ITEMS-->
+        <tbody>
+            {% for item in cart_items %}
+            <tr>
+                <td class="cart-media text-center align-middle"><img class="img-thumbnail cart-img text-center"
+                        src="{{ MEDIA_URL }}{{ item.product.image }}" alt="photo of product"></td>
+                <td class="text-center align-middle">{{ item.product.name }}</td>
+                <td class="text-center align-middle">${{ item.product.price }}</td>
+
+                <td class="align-middle">
+                    <form class="form-inline  justify-content-center" method="POST"
+                        action="{% url 'adjust_cart' item.id %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="exampleInputAmount" class="sr-only">New Qty</label>
+                            <div class="input-group">
+                                <input name="quantity" type="number" min="0" max="999" value="{{ item.quantity }}"
+                                    class="form-control input-group-addon" placeholder="{{ item.quantity }}">
+                            </div>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-success amend-btn"><span
+                                    class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
+                        </div>
+                    </form>
+                </td>
+                <td class="text-center align-middle">${{ item.line_total }}</td>
+                <td class="cross-btn align-middle text-center">
+                    <form method="POST" action="{% url 'delete_item' item.id %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input name="delete" type="hidden" value="0" placeholder="0">
+                        </div>
+                        <div>
+                            <button class="cross fas fa-times fa-2x"></button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <th scope="row"></th>
+                <td colspan="3" class="text-right"><strong>Total</strong></td>
+                <td class="text-center"><strong>${{ total }}</strong></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td colspan="4" class="text-right ">
+                    <form class="proceed d-flex justify-content-end" action="{% url 'checkout' %}">
+                        <button class="btn btn-success"> Proceed To Checkout</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 {% endblock %}

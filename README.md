@@ -62,7 +62,7 @@ The home/index page shows a navbar at the top of the screen with links to all pa
 -   Cart
 
 Unregistered users are able to view the blog page only, in order to shop a user must first register and login, this is by design so that all users are encouraged to register in order to have full access. As the site is used and items are added to the cart a fontawesome shopping cart icon will show next to cart nav item and display the number of items currently in the cart.
-The entire container is taken up by a background image and a banner has been added with a 'start shopping' button to encourage users to click and go straight to the shop/products page.  A simple footer is at the bottom of each page with copyright info.
+The entire container is taken up by a background image and a banner has been added with a 'start shopping' button to encourage users to click and go straight to the shop/products page.  A simple footer is at the bottom of each page with copyright info and social links.
 
 **Authentication Pages**
 
@@ -291,8 +291,6 @@ Passed. No issues were found when used on Edge.
 ## **Future Updates**
 
 - An additional view to showcase categories making finding items easier.
-
--   With more time I would add a profile section so that the customer can also look back at their order history, at the moment the order history is saved in the backend so there is a record which can be viewed for the purpose of packing and dispatching the orders.
 
 - More options for the Keyword search bar.
 
