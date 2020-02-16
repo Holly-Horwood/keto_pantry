@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% load static from staticfiles %}
+{% block page_title %}{{ user }}'s Order History{% endblock %} 
+{% block page_heading %}{{ user }}'s Order History{% endblock %}
+{% block messages %}
+<div class="container">
+    <h2 class="text-center mt-4 mb-4">Welcome {{ user }}</h2>
+    
+    
+    {% for order in orders %}
+
+    <h3>Your order will be shipped to:</h3>
+    <p><b>Date Ordered:</b> {{ order.date }}</p>
+    <p><b>Order ID:</b> {{ order.id }}</p>
+    <p><b>Name:</b> {{ order.full_name }}</p>
+    <p><b>Phone number:</b> {{ order.phone_number }}</p>
+    <p><b>Country:</b> {{ order.country }}</p>
+    <p><b>Postcode:</b> {{ order.postcode }}</p>
+    <p><b>Town or city:</b> {{ order.town_or_city }}</p>
+    <p><b>Address 1:</b> {{ order.street_address1 }}</p>
+    <p><b>Address 2:</b> {{ order.street_address2 }}</p>
+    <p><b>Region:</b> {{ order.region }}</p>
+  
+    {% endfor %}
+
+{% endblock %}
