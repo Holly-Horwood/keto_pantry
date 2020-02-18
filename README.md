@@ -85,6 +85,9 @@ The cart page shows the users a list 6 columns wide including, image, product na
 
 All products selected for purchase are shown first or on the right on smaller screens as bootstrap cards so that the user can easily see what they are buying.  There is a form that the user must fill out with their details including credit card information to be processed.  Once complete the user can click on submit payment which will then redirect them and show a confirmation message that the purchase was successful.  The order line items are saved in the admin section so that packers would then be able to see what was ordered and gather all items for delivery, the cart after checkout is emptied and a new cart is created so that the user is then able to continue shopping if they wish or shop with a new cart next time they log in. 
 
+**Profile**
+
+The profile shows the user name and password, it also has a button to reset the password and start shopping which redirects to the shop page.  This page also shows and order history with all orders listed in an accordion that can collapse and expand as the user requires.
 
 ### **_Skeleton_**
 
