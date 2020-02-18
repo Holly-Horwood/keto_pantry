@@ -269,6 +269,10 @@ a.navbar-brand {
 
 /*------------------------------------------------BLOG*/
 
+div.card-deck.blog-deck {
+    margin-right: 0px;
+}
+
 .blog-deck {
     margin-top: 10vh;
 }
@@ -281,7 +285,7 @@ a.navbar-brand {
     font-family: 'Roboto', sans-serif;
     padding: 2%;
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 0px;
     margin-top: 3%;
     width: 80%;
     box-shadow: 10px 10px 5px 0px rgba(219,204,219,1);

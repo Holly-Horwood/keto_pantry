@@ -41,7 +41,7 @@
             <hr>
             <h4 class="text-center mt-4 mb-4">YOUR ORDER HISTORY</h4>
             {% for order in orders %}
-            <div id="accordian">
+            <div id="accordion">
                 <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0">
@@ -59,13 +59,13 @@
                             <h6 class="text-center"><strong>YOUR ORDER WILL BE SHIPPED TO:</strong></h6>
                             <hr>
                             <p><b>Name:</b> {{ order.full_name }}</p>
-                            <p><b>Phone number:</b> {{ order.phone_number }}</p>
-                            <p><b>Country:</b> {{ order.country }}</p>
-                            <p><b>Postcode:</b> {{ order.postcode }}</p>
-                            <p><b>Town or city:</b> {{ order.town_or_city }}</p>
+                            <p><b>Phone:</b> {{ order.phone_number }}</p>
                             <p><b>Address 1:</b> {{ order.street_address1 }}</p>
                             <p><b>Address 2:</b> {{ order.street_address2 }}</p>
+                            <p><b>Town/City:</b> {{ order.town_or_city }}</p>
                             <p><b>Region:</b> {{ order.region }}</p>
+                            <p><b>Country:</b> {{ order.country }}</p>
+                            <p><b>Postcode:</b> {{ order.postcode }}</p>
                             <hr>
                             <h6 class="text-center"><strong>ITEMS TO BE DELIVERED:</strong></h6>
                             <table class="table table-hover">
