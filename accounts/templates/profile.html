@@ -18,10 +18,10 @@
 {% block content %}
 
 
-<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 mx-auto">
-    <div class="card profile-card border-secondary mb-3">
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mx-auto">
+    <div class="card profile-card border-secondary mb-5">
         <div class="card-header w-100 text-center">Welcome {{ user }}</div>
-        <div class="profile-body h-100 text-secondary">
+        <div class="profile-body h-100 w-100 text-secondary">
             <table class='profile-table'>
                 <tr>
                     <td>Username:&nbsp&nbsp;</td>
@@ -39,28 +39,56 @@
                 <a href="/products/" class="shop-button btn-success btn" tabindex="0">Start shopping</a>
             </div>
             <hr>
-            <div class="mt-4">
-                <a class="btn btn-success" href="">View Order History</a>
-            </div>
-        </div>
-        <div>
+            <h4 class="text-center mt-4 mb-4">YOUR ORDER HISTORY</h4>
             {% for order in orders %}
-                <h3>Your order will be shipped to:</h3>
-                <p><b>Date Ordered:</b> {{ order.date }}</p>
-                <p><b>Order ID:</b> {{ order.id }}</p>
-                <p><b>Name:</b> {{ order.full_name }}</p>
-                <p><b>Phone number:</b> {{ order.phone_number }}</p>
-                <p><b>Country:</b> {{ order.country }}</p>
-                <p><b>Postcode:</b> {{ order.postcode }}</p>
-                <p><b>Town or city:</b> {{ order.town_or_city }}</p>
-                <p><b>Address 1:</b> {{ order.street_address1 }}</p>
-                <p><b>Address 2:</b> {{ order.street_address2 }}</p>
-                <p><b>Region:</b> {{ order.region }}</p>
-                    <!--{% for order_line_item in order.order_line_item_set.all() %}
-                    <p>Items: {{ order_line_item.quantity }}</p>
-                    {% endfor %} !-->
-            {% endfor %}
-        </div> 
+            <div id="accordian">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                Order {{ order.date }}
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <p><b>Date Ordered:</b> {{ order.date }}</p>
+                            <p><b>Order ID:</b> {{ order.id }}</p>
+                            <hr>
+                            <h6 class="text-center"><strong>YOUR ORDER WILL BE SHIPPED TO:</strong></h6>
+                            <hr>
+                            <p><b>Name:</b> {{ order.full_name }}</p>
+                            <p><b>Phone number:</b> {{ order.phone_number }}</p>
+                            <p><b>Country:</b> {{ order.country }}</p>
+                            <p><b>Postcode:</b> {{ order.postcode }}</p>
+                            <p><b>Town or city:</b> {{ order.town_or_city }}</p>
+                            <p><b>Address 1:</b> {{ order.street_address1 }}</p>
+                            <p><b>Address 2:</b> {{ order.street_address2 }}</p>
+                            <p><b>Region:</b> {{ order.region }}</p>
+                            <hr>
+                            <h6 class="text-center"><strong>ITEMS TO BE DELIVERED:</strong></h6>
+                            <table class="table table-hover">
+                                <tbody>
+                                    {% for item in cart_items %}
+                                    <tr>
+                                        <td class="text-left align-middle">{{ item.product.name }}</td>
+                                        <td class="text-right align-middle">${{ item.product.price }}</td>
+                                    </tr>
+                                    
+                                    {% endfor %}
+                                    <tr>
+                                        <td class="text-left"><strong>Total</strong></td>
+                                        <td class="text-right"><strong>${{ total }}</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+            {% endfor %}    
+        </div>
     </div>
 </div>
 
