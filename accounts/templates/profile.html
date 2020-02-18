@@ -56,7 +56,9 @@
                 <p><b>Address 1:</b> {{ order.street_address1 }}</p>
                 <p><b>Address 2:</b> {{ order.street_address2 }}</p>
                 <p><b>Region:</b> {{ order.region }}</p>
-                <p><b>Order:</b> {{ order.order_id}}</p>
+                    {% for order_line_item in order.order_line_item_set.all() %}
+                    <p>Items: {{ order_line_item.quantity }}</p>
+                    {% endfor %}
             {% endfor %}
         </div> 
     </div>

@@ -3,9 +3,11 @@ from __future__ import unicode_literals
 
 from django.db import models
 from products.models import Product
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Order(models.Model):
+    user = models.ForeignKey(User, null=False)
     full_name = models.CharField(max_length=70, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
     email = models.CharField(max_length=100, blank=False)
