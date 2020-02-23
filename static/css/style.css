@@ -30,10 +30,6 @@ body {
     background-color: #fff;
 }
 
-.navbar-collapse {
-    background-color: #f8f9fab3;
-}
-
 .reg-container, .prompt, .login-container {
     color: #5f5e5e !important;
 }
@@ -152,12 +148,6 @@ body {
 
 .nav-item:hover {
     text-decoration: none;
-}
-
-.navbar-collapse {
-    text-align: right;
-    padding: 1%;
-    margin-left: 50vw;
 }
 
 a.navbar-brand {
