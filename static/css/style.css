@@ -111,6 +111,10 @@ form + footer {
     background-color: #fff;
 }
 
+.btn-order {
+    color: #28a745;
+}
+
 .alert-success {
     color: #7d7d7d !important;
     background-color: #f8f9fa !important;
@@ -265,6 +269,11 @@ a.navbar-brand {
 
 .profile-body {
     padding-top: 2%;
+}
+
+.btn-order {
+    font-weight: 600;
+    font-size: 20px;
 }
 
 /*------------------------------------------------BLOG*/
