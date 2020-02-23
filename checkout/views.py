@@ -66,7 +66,7 @@ def checkout(request):
             
             if customer.paid:
 
-                messages.error(request, "You have successfully paid")
+                messages.error(request, "Successfully Paid! View Order Below")
                 request.session['cart'] = {}
                 if request.user.is_authenticated:
                     try:
@@ -82,7 +82,7 @@ def checkout(request):
                     except Cart.DoesNotExist:
                         cart_model = None                               #if cart doesn't exist does nothing 
                 
-                return redirect(reverse('products'))
+                return redirect(reverse('profile')) 
             else:
                 messages.error(request, "Unable to take payment")
         else:

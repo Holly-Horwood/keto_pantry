@@ -36,7 +36,7 @@
             <a class="btn btn-danger text-center" href="{% url 'password_reset' %}">Change Your Password</a>
             <hr>
             <div class="profile-shop">
-                <a href="/products/" class="shop-button btn-success btn" tabindex="0">Start shopping</a>
+                <a href="/products/" class="shop-button btn-success btn btn-lg" tabindex="0">CONTINUE SHOPPING</a>
             </div>
             <hr>
             <h4 class="text-center mt-4 mb-4">YOUR ORDER HISTORY</h4>
@@ -51,7 +51,7 @@
                             </button>
                         </h5>
                     </div>
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
                             <p><b>Date Ordered:</b> {{ order.date }}</p>
                             <p><b>Order ID:</b> {{ order.id }}</p>
@@ -70,16 +70,18 @@
                             <h6 class="text-center"><strong>ITEMS TO BE DELIVERED:</strong></h6>
                             <table class="table table-hover">
                                 <tbody>
-                                    {% for item in cart_items %}
+                                    {% for item in order.orderlineitem_set.all %}
                                     <tr>
                                         <td class="text-left align-middle">{{ item.product.name }}</td>
                                         <td class="text-right align-middle">${{ item.product.price }}</td>
-                                    </tr>
-                                    
-                                    {% endfor %}
-                                    <tr>
                                         <td class="text-left"><strong>Total</strong></td>
                                         <td class="text-right"><strong>${{ total }}</strong></td>
+                                    </tr>
+                                    {% endfor %}
+
+                                    <tr>
+                                        
+                                       
                                     </tr>
                                 </tbody>
                             </table>
