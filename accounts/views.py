@@ -82,9 +82,9 @@ def registration(request):
         "registration_form": registration_form})
 
 def user_profile(request):
-    """User profile page"""
+    """User profile page, orders are added by date"""
     user = User.objects.get(email=request.user.email)
-    orders = Order.objects.filter(user_id=request.user.id)
+    orders = Order.objects.filter(user_id=request.user.id).order_by('-date')
     return render(request, 'profile.html', {"profile": user, "orders": orders})    
 
 
