@@ -3,10 +3,12 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect, reverse
+from django.db.models import Sum
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required #will block users who are not logged in from seeing the logout page
 from django.contrib.auth.models import User
 from django.forms import model_to_dict
+from cart.contexts import cart_contents
 from accounts.forms import UserLoginForm, UserLoginForm, UserRegistrationForm
 from cart.models import Cart, CartLineItem
 from products.models import Product
@@ -85,7 +87,8 @@ def user_profile(request):
     """User profile page, orders are added by date"""
     user = User.objects.get(email=request.user.email)
     orders = Order.objects.filter(user_id=request.user.id).order_by('-date')
-    return render(request, 'profile.html', {"profile": user, "orders": orders})    
+    order_total = cart_contents.objects.aggregate(Sum('line_total'))
+    return render(request, 'profile.html', {"profile": user, "orders": orders, "order_total": order_total})    
 
 
 

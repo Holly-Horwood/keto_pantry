@@ -74,14 +74,11 @@
                                     <tr>
                                         <td class="text-left align-middle">{{ item.product.name }}</td>
                                         <td class="text-right align-middle">${{ item.product.price }}</td>
-                                        <td class="text-left"><strong>Total</strong></td>
-                                        <td class="text-right"><strong>${{ total }}</strong></td>
                                     </tr>
                                     {% endfor %}
-
                                     <tr>
-                                        
-                                       
+                                        <td class="text-left"><strong>Total</strong></td>
+                                        <td class="text-right"><strong>${{ order_total }}</strong></td>
                                     </tr>
                                 </tbody>
                             </table>
