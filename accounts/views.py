@@ -87,8 +87,13 @@ def user_profile(request):
     """User profile page, orders are added by date"""
     user = User.objects.get(email=request.user.email)
     orders = Order.objects.filter(user_id=request.user.id).order_by('-date')
-    order_total = cart_contents.objects.aggregate(Sum('line_total'))
-    return render(request, 'profile.html', {"profile": user, "orders": orders, "order_total": order_total})    
+    for order in orders: # for order code courtesy of Dick Vlaanderen
+        if order.total == None:
+            order.total = Decimal(0.0)
+            for line in order.orderlineitem_set.all():
+                order.total += line.product.price * line.quantity
+            order.save()
+    return render(request, 'profile.html', {"profile": user, "orders": orders})    
 
 
 

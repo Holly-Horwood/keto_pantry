@@ -18,6 +18,7 @@ class Order(models.Model):
     country = models.CharField(max_length=40, blank=False)
     postcode = models.CharField(max_length=20, blank=True)
     date = models.DateField()
+    total = models.DecimalField(max_digits=8, decimal_places=2, null=True, blank=True)
 
     def __str__(self):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
