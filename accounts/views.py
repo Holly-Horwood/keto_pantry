@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect, reverse
 from django.db.models import Sum
+from decimal import Decimal
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required #will block users who are not logged in from seeing the logout page
 from django.contrib.auth.models import User
