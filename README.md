@@ -200,7 +200,6 @@ As a user on the website I want the ability to easily find diet friendly recipe 
 **Test Planning:**
   Automated testing was implemented using Djangos [TestCase](https://docs.djangoproject.com/en/2.2/topics/testing/overview/)Test files can be viewed under each app *tests_views.py* and  *tests_forms.py*. All remaining tests were carried out manually by humans.  For the browser testing the users will interact with all pages of the site as well as click on all links and buttons and fill out all forms to observe the results as well as viewing the site on different viewports. 
 
-### **Automated Testing**
 
 **TestCase**
 -   TestCase was used for automated testing it uses Pythons standard library unittest.   I built different tests for most of my Python views, forms and models.  All tests created passed.
@@ -389,6 +388,10 @@ else:
 ---
 
 ## **Credits**
+
+**Code:**
+
+Accounts views.py lines 90-95 code courtesy of my tutor Dick Vlaanderen
 
 **Content:**
 
