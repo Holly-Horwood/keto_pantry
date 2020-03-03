@@ -14,6 +14,7 @@ from django.contrib.auth.models import User
 from products.models import Product
 from cart.models import Cart
 from cart.contexts import cart_contents
+from decimal import Decimal
 
 
 
@@ -36,7 +37,7 @@ def checkout(request):
             cart_contents(request)
             cartDict = request.session.get('cart', {})
             product_count = 0
-            order.total = 0.0
+            order.total = Decimal(0.0)
             if cartDict:
                 cart = Cart.objects.get(id=cartDict['id'])
                 for cart_line_item in cart.cartlineitem_set.all():

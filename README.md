@@ -389,19 +389,17 @@ else:
 
 ## **Credits**
 
-**Code:**
-
-Accounts views.py lines 90-95 code courtesy of my tutor Dick Vlaanderen
-
 **Content:**
 
 All content written by Holly Horwood.
 
 **Media:**
 
+-   Home Page Strawberry Image - Photo by Adonyi Gábor from Pexels From <https://www.pexels.com/photo/strawberry-drop-on-milk-2064359/> 
 -   Images were supplied by Pixabay, Upsplash and Flickr
 - Favicon was generated using favicon.io
 -   You Tube. JS to change nav colour on scroll - Code courtesy of System 22 I.T. Solutions https://www.youtube.com/watch?v=AM-GT_0Uu5w
+-   Accounts views.py lines 90-95 code courtesy of my tutor Dick Vlaanderen
 -   Google fonts: Roboto and Montserrat
 -   Registration and login background photo by Kelly Sikkema on Unsplash
 

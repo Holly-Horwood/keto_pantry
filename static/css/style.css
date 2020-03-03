@@ -91,6 +91,10 @@ table.table.table-hover {
     background-color: #fff
 }
 
+.profile-container + footer {
+    background-color: #fff
+}
+
 form + footer {
     background-color: transparent;
 }
