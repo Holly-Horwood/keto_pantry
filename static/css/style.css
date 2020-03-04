@@ -30,6 +30,10 @@ body {
     background-color: #fff;
 }
 
+#navbarNav.navbar-collapse.collapse.show {
+    background-color: #fff;
+}
+
 .reg-container, .prompt, .login-container {
     color: #5f5e5e !important;
 }
@@ -115,6 +119,10 @@ form + footer {
     color: #28a745;
 }
 
+.btn-link {
+    color: #28a745 !important;
+}    
+
 .alert-success {
     color: #7d7d7d !important;
     background-color: #f8f9fa !important;
@@ -159,6 +167,10 @@ a.navbar-brand {
     font-size: 2em;
     padding-top: 0;
     margin-left: 20px;
+}
+
+#navbarNav.navbar-collapse.collapse.show {
+    padding: 2%;
 }
 
 /*----------------------------------------------INDEX*/
