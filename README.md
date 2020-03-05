@@ -286,7 +286,7 @@ Passed. No issues were found when used on Edge.
 
 - Due to issues with my own email service provider I was unable to get real email responses to work on the site for authentication purposes.  I have however setup *email backend* in the *settings.py* file for testing.
 
-- It was noticed that the orders had at some point stopped storing the order history in *Admin* this was a case of some code that wasn't replaced after some changes and was quickly rectified.
+- The code used on the course for password validation had stopped working, initially the tutors could not find any reason why it wasn't working as the code was correct.  Tutor Michael after some research found a work around and credits have been added to his code.
 
 ---
 
@@ -400,6 +400,7 @@ All content written by Holly Horwood.
 - Favicon was generated using favicon.io
 -   You Tube. JS to change nav colour on scroll - Code courtesy of System 22 I.T. Solutions https://www.youtube.com/watch?v=AM-GT_0Uu5w
 -   Accounts views.py lines 90-95 code courtesy of my tutor Dick Vlaanderen
+    Accounts views.py lines 74-86 courtesy of Michael, tutor at Code Institute due to course validation code not working
 -   Google fonts: Roboto and Montserrat
 -   Registration and login background photo by Kelly Sikkema on Unsplash
 

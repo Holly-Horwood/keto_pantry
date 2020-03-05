@@ -71,7 +71,7 @@ def registration(request):
         registration_form = UserRegistrationForm(request.POST)
 
         if registration_form.is_valid():
-            user = registration_form.save(commit=False)
+            user = registration_form.save(commit=False) # lines 74-86 courtesy of Michael, tutor at Code Institute
 
             u = registration_form.cleaned_data['username']
             p = registration_form.cleaned_data['password1']
