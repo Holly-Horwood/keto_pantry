@@ -3,6 +3,8 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect, reverse
+from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ValidationError
 from django.db.models import Sum
 from decimal import Decimal
 from django.contrib import auth, messages
@@ -69,10 +71,20 @@ def registration(request):
         registration_form = UserRegistrationForm(request.POST)
 
         if registration_form.is_valid():
-            registration_form.save()
+            user = registration_form.save(commit=False)
 
-            user = auth.authenticate(username=request.POST['username'],
-                                     password=request.POST['password1'])
+            u = registration_form.cleaned_data['username']
+            p = registration_form.cleaned_data['password1']
+            try:
+                validate_password(p,u)
+            except ValidationError as e:
+                registration_form.add_error('password1', e) # to be displayed with the fields errors
+                return render(request, 'registration.html', {"registration_form": registration_form})    
+
+            user.set_password(p)
+            user.save()
+            user = auth.authenticate(username= u, password =p) # sets the password on the user model and saves the user to the database and then logs them in
+
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully registered")
@@ -94,7 +106,8 @@ def user_profile(request):
             for line in order.orderlineitem_set.all():
                 order.total += line.product.price * line.quantity
             order.save()
-    return render(request, 'profile.html', {"profile": user, "orders": orders})    
+    return render(request, 'profile.html', {"profile": user, "orders": orders})  
+
 
 
 
