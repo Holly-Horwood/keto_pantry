@@ -439,6 +439,18 @@ footer {
 
 /*-------------------MEDIA----------------------------*/
 
+/*-------------------MOBILE----------------------------*/
+
+/*Extra small devices (mobiles, up to 420px)*/
+
+@media (max-width: 420px) {
+
+    body .table {
+        font-size: .7em;
+    }    
+
+ }
+
 /*-------------------TABLET---------------------------*/
 
 /*Medium devices (tablets, 768px and up)*/
@@ -530,3 +542,5 @@ footer {
     }
 
  }  
+
+ 
